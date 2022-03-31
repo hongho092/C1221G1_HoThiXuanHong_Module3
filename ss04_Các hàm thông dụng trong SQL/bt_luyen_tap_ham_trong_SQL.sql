@@ -5,10 +5,8 @@ having credit >= all (select max(credit) from `subject`);
 
 select `subject`.sub_id, student.student_id, `subject`.sub_name, mark.mark
 from mark
-join `subject`
-on mark.sub_id = `subject`.sub_id
-join student
-on student.student_id = mark.student_id
+join `subject` on mark.sub_id = `subject`.sub_id
+join student on student.student_id = mark.student_id
 group by sub_id
 having mark >= all (select max(mark) from mark);
 
