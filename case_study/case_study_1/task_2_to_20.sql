@@ -65,8 +65,19 @@ select ho_ten from nhan_vien;
 select distinct ho_ten from nhan_vien;
 
 -- 9
+select month(hd.ngay_lam_hop_dong) as thang, count(hd.ma_hop_dong) as so_lan_dat
+from hop_dong hd 
+where year(hd.ngay_lam_hop_dong) = 2021
+group by thang
+order by thang;
 
+-- 10
+select hd.ma_hop_dong, hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, hd.tien_dat_coc, sum(hdct.so_luong) as so_luong_dich_di_kem
+from hop_dong hd
+left join hop_dong_chi_tiet hdct on hdct.ma_hop_dong = hd.ma_hop_dong
+group by hd.ma_hop_dong;
 
+-- 11
 
 
 
