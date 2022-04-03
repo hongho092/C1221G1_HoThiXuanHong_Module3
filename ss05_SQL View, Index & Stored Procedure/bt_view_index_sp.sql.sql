@@ -61,7 +61,7 @@ set sql_safe_updates = 0;
 update products p
 set p.id = new_id
 where p.id = old_id;
-set sql_safe_updates = 0;
+set sql_safe_updates = 1;
 end //
 delimiter ;
 
