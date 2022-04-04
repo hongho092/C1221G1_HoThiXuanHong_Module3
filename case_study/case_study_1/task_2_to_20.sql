@@ -85,7 +85,7 @@ group by thang
 order by thang;
 
 -- 10
-select hd.ma_hop_dong, hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, hd.tien_dat_coc, sum(hdct.so_luong) as so_luong_dich_di_kem
+select hd.ma_hop_dong, hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, hd.tien_dat_coc, if(hdct.so_luong is null, 0, sum(hdct.so_luong)) as so_luong_dich_di_kem
 from hop_dong hd
 left join hop_dong_chi_tiet hdct on hdct.ma_hop_dong = hd.ma_hop_dong
 group by hd.ma_hop_dong;
@@ -117,12 +117,24 @@ not in (select dv.ma_dich_vu
 group by hd.ma_hop_dong;
 
 -- 13
-select dvdk.ma_dich_vu_di_kem, dvdk.ten_dich_vu_di_kem, sum(hdct.so_luong) as tong_dich_vu_kem
-from hop_dong_chi_tiet hdct 
-inner join dich_vu_di_kem dvdk on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
-group by hdct.ma_dich_vu_di_kem
-having tong_dich_vu_kem >= all(select max(so_luong) from hop_dong_chi_tiet);
+-- select dvdk.ma_dich_vu_di_kem, dvdk.ten_dich_vu_di_kem, sum(hdct.so_luong) as tong_dich_vu_kem
+-- from hop_dong_chi_tiet hdct 
+-- inner join dich_vu_di_kem dvdk on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+-- group by hdct.ma_dich_vu_di_kem
+-- having tong_dich_vu_kem >= (select max(so_luong) from hop_dong_chi_tiet );
     
+create or replace view so_luong as     
+select sum(hdct.so_luong) as tong_dich_vu_kem
+from hop_dong_chi_tiet hdct 
+group by hdct.ma_dich_vu_di_kem;
+
+select dvdk.ma_dich_vu_di_kem, dvdk.ten_dich_vu_di_kem, sum(hdct.so_luong)
+from dich_vu_di_kem dvdk
+join hop_dong_chi_tiet hdct on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+group by hdct.ma_dich_vu_di_kem
+having sum(hdct.so_luong) 
+in (select max(tong_dich_vu_kem) from so_luong);
+
 -- select hdct.ma_dich_vu_di_kem, count(hdct.so_luong) as tong_dich_vu_kem
 -- from hop_dong_chi_tiet hdct
 -- group by hdct.ma_dich_vu_di_kem;
@@ -137,7 +149,7 @@ having tong_dich_vu_kem >= all(select max(so_luong) from hop_dong_chi_tiet);
 -- 9  		v		v
 
 -- 14
-select hd.ma_hop_dong, ldv.ten_loai_dich_vu, dvdk.ten_dich_vu_di_kem, count(hdct.so_luong) as so_lan_su_dung
+select hd.ma_hop_dong, ldv.ten_loai_dich_vu, dvdk.ten_dich_vu_di_kem, count(dvdk.ma_dich_vu_di_kem) as so_lan_su_dung
 from dich_vu_di_kem dvdk 
 join hop_dong_chi_tiet hdct on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
 join hop_dong hd on hdct.ma_hop_dong = hd.ma_hop_dong
@@ -173,12 +185,14 @@ delete from nhan_vien nv
 where nv.ma_nhan_vien 
 not in (select hd.ma_nhan_vien
         from hop_dong hd
-	    group by hd.ma_nhan_vien);
+        where hd.ngay_lam_hop_dong between "2019/01/01" and "2021/12/31"
+        group by hd.ma_nhan_vien
+	    );
 set sql_safe_updates = 1;
 select * from nhan_vien;
 
 -- 17
-create view update_kh as
+create or replace view thay_doi_loai_khach as
 select kh.ma_khach_hang, lkh.ma_loai_khach, sum(dv.chi_phi_thue + (hdct.so_luong * dvdk.gia)) as tong_tien
 from khach_hang kh
 join loai_khach_hang lkh on kh.ma_loai_khach = lkh.ma_loai_khach
@@ -190,20 +204,51 @@ where hd.ngay_lam_hop_dong between "2021/01/01" and "2021/12/31"
 group by kh.ma_khach_hang
 having tong_tien >= 10000000;
 
+-- update thay_doi_loai_khach
+-- set thay_doi_loai_khach.ten_loai_khach = "Diamond"
+-- where thay_doi_loai_khach.ten_loai_khach = "Platinium"; 
+
 update khach_hang kh
 set kh.ma_loai_khach = 1
 where kh.ma_loai_khach = 2
 and kh.ma_loai_khach 
-in (select update_kh.ma_loai_khach
-	from update_kh); 
+in (select thay_doi_loai_khach.ma_loai_khach
+	from thay_doi_loai_khach); 
 
 -- 18
+create or replace view xoa_khach_hang as
+select hd.ma_khach_hang, kh.ho_ten
+from hop_dong hd
+join khach_hang kh on hd.ma_khach_hang = kh.ma_khach_hang
+where year(hd.ngay_lam_hop_dong) < 2021
+group by hd.ma_khach_hang;
+set foreign_key_checks = off;
+delete from khach_hang kh
+where kh.ma_khach_hang
+in (select xoa_khach_hang.ma_khach_hang
+	from xoa_khach_hang);
+set foreign_key_checks = on;
 
 -- 19
+create or replace view thay_doi_gia as
+select dvdk.ma_dich_vu_di_kem, dvdk.gia, sum(hdct.so_luong) as so_lan
+from hop_dong_chi_tiet hdct
+join dich_vu_di_kem dvdk on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+join hop_dong hd on hd.ma_hop_dong = hdct.ma_hop_dong
+where year(hd.ngay_lam_hop_dong) = 2020
+group by hdct.ma_dich_vu_di_kem
+having so_lan > 10;
+set sql_safe_updates = 0;
+update dich_vu_di_kem dvdk
+set dvdk.gia = dvdk.gia * 2
+where dvdk.ma_dich_vu_di_kem
+in (select thay_doi_gia.ma_dich_vu_di_kem
+	from thay_doi_gia);
+set sql_safe_updates = 1;
 
 -- 20
 select "nhan_vien" as vai_tro, nv.ma_nhan_vien as ma, nv.ho_ten as `ho_ten`, nv.email, nv.so_dien_thoai, nv.ngay_sinh, nv.dia_chi 
 from nhan_vien nv
 union
 select "khach_hang" as vai_tro, kh.ma_khach_hang, kh.ho_ten, kh.email, kh.so_dien_thoai, kh.ngay_sinh, kh.dia_chi
-from khach_hang kh;
+from khach_hang kh; 
