@@ -127,7 +127,6 @@ create or replace view so_luong as
 select sum(hdct.so_luong) as tong_dich_vu_kem
 from hop_dong_chi_tiet hdct 
 group by hdct.ma_dich_vu_di_kem;
-
 select dvdk.ma_dich_vu_di_kem, dvdk.ten_dich_vu_di_kem, sum(hdct.so_luong)
 from dich_vu_di_kem dvdk
 join hop_dong_chi_tiet hdct on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
@@ -186,8 +185,7 @@ where nv.ma_nhan_vien
 not in (select hd.ma_nhan_vien
         from hop_dong hd
         where hd.ngay_lam_hop_dong between "2019/01/01" and "2021/12/31"
-        group by hd.ma_nhan_vien
-	    );
+        group by hd.ma_nhan_vien);
 set sql_safe_updates = 1;
 select * from nhan_vien;
 
@@ -200,36 +198,34 @@ join hop_dong hd on kh.ma_khach_hang = hd.ma_khach_hang
 join dich_vu dv on dv.ma_dich_vu = hd.ma_dich_vu
 join hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong
 join dich_vu_di_kem dvdk on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
-where hd.ngay_lam_hop_dong between "2021/01/01" and "2021/12/31"
+where (hd.ngay_lam_hop_dong between "2021/01/01" and "2021/12/31") and ten_loai_khach = "Platinium"
 group by kh.ma_khach_hang
 having tong_tien >= 10000000;
-
--- update thay_doi_loai_khach
--- set thay_doi_loai_khach.ten_loai_khach = "Diamond"
--- where thay_doi_loai_khach.ten_loai_khach = "Platinium"; 
-
-update khach_hang kh
+set sql_safe_updates = 0;
+update khach_hang kh, (select ma_khach_hang from thay_doi_loai_khach) as x
 set kh.ma_loai_khach = 1
-where kh.ma_loai_khach = 2
-and kh.ma_loai_khach 
-in (select thay_doi_loai_khach.ma_loai_khach
-	from thay_doi_loai_khach); 
+where kh.ma_khach_hang = x.ma_khach_hang;
+-- in (select ma_khach_hang 
+-- from (select ma_khach_hang from thay_doi_loai_khach) as x);
+set sql_safe_updates = 1;
+
+-- = 2
+-- and kh.ma_loai_khach
+-- in (select thay_doi_loai_khach.ma_loai_khach
+-- 	from thay_doi_loai_khach); 
 
 -- 18
-create or replace view xoa_khach_hang as
-select hd.ma_khach_hang, kh.ho_ten
-from hop_dong hd
-join khach_hang kh on hd.ma_khach_hang = kh.ma_khach_hang
-where year(hd.ngay_lam_hop_dong) < 2021
-group by hd.ma_khach_hang;
+set sql_safe_updates = 0;
 set foreign_key_checks = off;
 delete from khach_hang kh
 where kh.ma_khach_hang
-in (select xoa_khach_hang.ma_khach_hang
-	from xoa_khach_hang);
+in (select hd.ma_khach_hang
+    from hop_dong hd
+    where year(hd.ngay_lam_hop_dong) < 2021);
 set foreign_key_checks = on;
+set sql_safe_updates = 1;
 
--- 19
+-- 19.1 tạo view riêng(chung)
 create or replace view thay_doi_gia as
 select dvdk.ma_dich_vu_di_kem, dvdk.gia, sum(hdct.so_luong) as so_lan
 from hop_dong_chi_tiet hdct
@@ -246,9 +242,54 @@ in (select thay_doi_gia.ma_dich_vu_di_kem
 	from thay_doi_gia);
 set sql_safe_updates = 1;
 
+-- 19.2 tạo view riêng(tách)
+set sql_safe_updates = 0;
+update dich_vu_di_kem dvdk, (select ma_dich_vu_di_kem from thay_doi_gia) as x
+set dvdk.gia = dvdk.gia * 2
+where dvdk.ma_dich_vu_di_kem = x.ma_dich_vu_di_kem;
+set sql_safe_updates = 1;
+
+-- 19.3 lồng cả view vào trong điều kiện xóa
+set sql_safe_updates = 0;
+update dich_vu_di_kem dvdk
+set dvdk.gia = dvdk.gia * 2
+where dvdk.ma_dich_vu_di_kem 
+in (select ma_dich_vu_di_kem 
+    from (select dvdk.ma_dich_vu_di_kem, dvdk.gia, sum(hdct.so_luong) as so_lan
+          from hop_dong_chi_tiet hdct
+          join dich_vu_di_kem dvdk on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+		  join hop_dong hd on hd.ma_hop_dong = hdct.ma_hop_dong
+          where year(hd.ngay_lam_hop_dong) = 2020
+          group by hdct.ma_dich_vu_di_kem
+          having so_lan > 10) as x) ;
+set sql_safe_updates = 1;
+
 -- 20
 select "nhan_vien" as vai_tro, nv.ma_nhan_vien as ma, nv.ho_ten as `ho_ten`, nv.email, nv.so_dien_thoai, nv.ngay_sinh, nv.dia_chi 
 from nhan_vien nv
 union
 select "khach_hang" as vai_tro, kh.ma_khach_hang, kh.ho_ten, kh.email, kh.so_dien_thoai, kh.ngay_sinh, kh.dia_chi
 from khach_hang kh; 
+
+-- 21
+create or replace view v_nhan_vien as
+select nv.*
+from nhan_vien nv
+join hop_dong hd on nv.ma_nhan_vien = hd.ma_nhan_vien
+where nv.dia_chi like "%Hải Châu" 
+and hd.ngay_lam_hop_dong = "2019-12-12";
+
+set sql_safe_updates = 0;
+update v_nhan_vien 
+set v_nhan_vien.dia_chi = "Liên Chiểu"
+where v_nhan_vien.dia_chi like "%Hải Châu";
+set sql_safe_updates = 1;
+
+-- 23
+delimiter //
+create procedure sp_xoa_khach_hang (in ma_khach_hang int)
+begin
+delete from khach_hang kh
+where kh.ma_khach_hang = ma_khach_hang;
+end //
+delimiter ;
