@@ -25,11 +25,10 @@ a{
 div#menu{
     border: 2px dotted blue;
     background: antiquewhite;
-    width: 15%;
     float: left;
     padding: 40px;
     position: fixed;
-    left: 50px;
+    left: 100px;
 
 }
 div#main{
