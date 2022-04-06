@@ -9,7 +9,7 @@ end //
 
 call getCusById(175);
 
-delimit //
+delimiter //
 create procedure getCustomersCountByCity (in in_city varchar(50), out total int)
 begin
 select count(customerNumber)
@@ -19,7 +19,7 @@ where city = in_city;
 end //
 delimiter ;
 
-call getCustomersCountByCity("Lyon", @total)
+call getCustomersCountByCity("Lyon", @total);
 
 delimiter //
 create procedure SetCounter(inout counter int, in inc int)

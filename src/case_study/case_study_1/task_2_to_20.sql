@@ -23,7 +23,7 @@ order by  so_lan_dat_phong;
 select kh.ma_khach_hang, kh.ho_ten, lkh.ten_loai_khach, hd.ma_hop_dong, dv.ten_dich_vu, hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, 
        if (hdct.so_luong is null, dv.chi_phi_thue, sum(dv.chi_phi_thue + (hdct.so_luong * dvdk.gia))) as tong_tien
 from khach_hang kh
-left join loai_khach_hang lkh on kh.ma_loai_khach = lkh.ma_loai_khach
+join loai_khach_hang lkh on kh.ma_loai_khach = lkh.ma_loai_khach
 left join hop_dong hd on kh.ma_khach_hang = hd.ma_khach_hang
 left join dich_vu dv on hd.ma_dich_vu = dv.ma_dich_vu
 left join hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong
@@ -279,6 +279,7 @@ join hop_dong hd on nv.ma_nhan_vien = hd.ma_nhan_vien
 where nv.dia_chi like "%Hải Châu" 
 and hd.ngay_lam_hop_dong = "2019-12-12";
 
+-- 22
 set sql_safe_updates = 0;
 update v_nhan_vien 
 set v_nhan_vien.dia_chi = "Liên Chiểu"
