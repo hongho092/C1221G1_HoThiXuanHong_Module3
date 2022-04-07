@@ -8,6 +8,10 @@ img{
     padding-right: 300px;
     /*filter: contrast(10%);*/
 }
+div#title{
+    position: sticky;
+    top: 0;
+}
 h5{
     font-size: 25px;
     padding-bottom: 0px;
@@ -27,9 +31,9 @@ div#menu{
     background: antiquewhite;
     float: left;
     padding: 40px;
-    position: fixed;
+    /*position: fixed;*/
     left: 100px;
-
+    border-radius: 10px;
 }
 div#main{
     width: 75%;

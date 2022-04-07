@@ -1,0 +1,50 @@
+img {
+    height: 50px;
+    width: 50px;
+    /*padding: 30px;*/
+    border: solid black;
+}
+
+div + a {
+    background: black;
+}
+
+#header {
+    width: 100%;
+    background: #ecbe0b;
+    height: 50px;
+    padding-left: 10px;
+    position: fixed;
+    top: 0px;
+}
+
+#left {
+    display: block;
+    padding: 30px;
+    text-align: center;
+}
+span {
+    display: block;
+    margin: 50px;
+}
+.between {
+    text-align: center;
+    border: solid black;
+}
+.asd {
+    margin-left: 30px;
+    width: 90%;
+    height: 500px;
+}
+#text {
+    text-align: center;
+    border: solid  black;
+}
+div#footer {
+    background: black;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+
