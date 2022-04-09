@@ -4,9 +4,9 @@ div#head {
     font-size: 25px;
     background: black;
     color: orange;
-    /*position: sticky;*/
+    /*position: fixed;*/
     /*top: 0;*/
-    /*height: 50px;*/
+    width: 100%;
 }
 
 div#menu {
