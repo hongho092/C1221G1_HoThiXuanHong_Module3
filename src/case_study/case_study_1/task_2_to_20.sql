@@ -294,3 +294,138 @@ delete from khach_hang kh
 where kh.ma_khach_hang = ma_khach_hang;
 end //
 delimiter ;
+
+-- 24
+delimiter //
+drop procedure if exists sp_2 //
+create procedure sp_2 (in ma_hop_dong int, in ma_nhan_vien int, in ma_khach_hang int, in ma_dich_vu int, in ngay_lam_hop_dong date, in ngay_ket_thuc date, in tien_dat_coc int, in tong_tien int)
+begin
+set @x = (select count(ma_hop_dong) 
+		  from hop_dong hd
+          where hd.ma_hop_dong = ma_hop_dong
+          group by hd.ma_hop_dong);
+if ((@x is null)
+and (select ma_nhan_vien 
+     from nhan_vien nv
+     where nv.ma_nhan_vien = ma_nhan-vien)
+and (select ma_khach_hang  
+     from khach_hang kh
+     where kh.ma_khach_hang = ma_khach_hang)
+and (select ma_dich_vu 
+     from dich_vu dv
+     where dv.ma_dich_vu = ma_dich-vu)
+and (ngay_ket_thuc > ngay_lam_hop_dong)) 
+then
+insert into hop_dong
+values (ma_hop_dong, ma_nhan_vien, ma_khach_hang, ma_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, tong_tien);
+else
+signal sqlstate '45000' set message_text = 'Dữ liệu sai';
+end if;
+end //
+delimiter ;
+
+-- 25
+delimiter //
+drop trigger if exists tr_1 // 
+create trigger tr_1 after delete on hop_dong for each row
+begin
+set @x = (select count(*) as count from hop_dong);
+end //
+delimiter ;
+set @x = 0;
+delete from hop_dong where hop_dong.ma_hop_dong = 10;
+select @x as 'Total amount deleted';
+
+-- 26 
+delimiter //
+drop trigger if exists tr_2 //
+create trigger tr_2 after update on hop_dong for each row
+begin
+if datediff(new.ngay_ket_thuc, old.ngay_lam_hop_dong) < 2 then
+signal sqlstate '45000' set message_text = 'Ngày kết thúc hợp đồng phải lớn hơn ngày làm hợp đồng ít nhất là 2 ngày.';
+end if;
+end //
+delimiter ;
+update `case_study_module3`.hop_dong set ngay_ket_thuc = 2018-12-29 where (ma_hop_dong = 3);
+
+-- 27a
+
+delimiter //
+drop function if exists func_1 //
+create function func_1() returns int
+deterministic
+begin
+create temporary table temp
+(select count(distinct id_dich_vu)
+ from hop_dong 
+ where ma_dich_vu 
+ in (select distinct ma_dich_vu
+	 from hop_dong)
+ group by ma_dich_vu
+ having sum(tong_tien) > 2000000);
+ set @tong_so_dich_vu = (select count(*) from temp);
+ drop temporary table temp;
+ return @tong_so_dich_vu;
+ end //
+ delimiter ;
+ select func_1() as 'Số lượng dịch vụ có tổng tiền trên 2000000';
+
+-- 27b
+
+delimiter //
+drop function if exists func_2 //
+create function func_2 (ma_khach_hang int) returns int
+deterministic
+begin
+	set@time_dai_nhat = (select max(datediff(hop_dong.ngay_ket_thuc, hop_dong.ngay_lam_hop_dong))
+						 from hop_dong
+                         where hop_dong.ma_khach_hang = ma_khach_hang);
+	return @time_dai_nhat;
+end;
+-- select func_2(4) as 'Thời gian dài nhất'; 
+
+-- 28
+delimiter //
+drop procedure if exists sp_3 //
+create procedure sp_3()
+begin
+	declare dich_vu int default 0;
+    declare is_done int default 0;
+    declare con_tro cursor for
+		select dv.ma_dich_vu
+        from dich_vu dv
+        inner join hop_dong hd on dv.ma_dich_vu = hd.ma_dich_vu
+        inner join loai_dich_vu ldv on dv.ma_loai_dich_vu = ldv.ma_loai_dich_vu
+        where ldv.ten_loai_dich_vu = 'room' and year(hd.ngay_lam_hop_dong) between '2015' and '2025';
+	declare continue handler for not found set id_done = 1;
+    open con_tro;
+	get_list: loop
+    fetch from con_tro into dich_vu;
+    if is_done = 1 then
+    leave get_list;
+    end if;
+    delete from hop_dong hd where hd.ma_dich_vu = dich_vu;
+    delete from dich_vu dv where dich_vu.ma_dich_vu = dich_vu;
+	end loop get_list;
+	close con_tro;
+end //
+delimiter ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
