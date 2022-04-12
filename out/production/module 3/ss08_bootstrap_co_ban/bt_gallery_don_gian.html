@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <style>
+        div#head {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        div#main {
+            padding: 20px;
+        }
+        div#foot {
+            text-align: center;
+            border: solid black;
+            padding: 20px;
+        }
+        div.card {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="col-12" id="head">
+    <h1 style="color: red">Responsive Image Gallery</h1>
+    <h4>Resize the browser window to see the effect.</h4>
+</div>
+
+<div class="row" id="main">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card">
+            <img src="https://demo.codegym.vn/web/15/gallery/img_fjords.jpg" class="card-img-top" alt="Ảnh">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card">
+            <img src="https://demo.codegym.vn/web/15/gallery/img_forest.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+<!--col-xs-3 col-sm-6 col-12-->
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card">
+            <img src="https://demo.codegym.vn/web/15/gallery/img_lights.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card">
+            <img src="https://demo.codegym.vn/web/15/gallery/img_mountains.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12" id="foot">
+    <p>Hãy sử dụng Media Query để tạo một Gallery đơn giản như bản mấu ở đây. <br>
+
+        Lưu ý: <br>
+
+        Với các màn hình có độ rộng lớn hơn 700px thì hiển thị 4 ảnh trên cùng một dòng. <br>
+
+        Với các màn hình nhỏ hơn 700px thì hiển thị 2 ảnh trên cùng một dòng. <br>
+
+        Với các màn hình nhỏ hơn 500px thì hiển thị 1 ảnh trên một dòng.</p>
+</div>
+
+
+<script src="../../bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

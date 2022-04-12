@@ -1,0 +1,36 @@
+* {
+    /*text-align: center;*/
+    box-sizing: border-box;
+}
+
+div#slide {
+    padding: 50px 200px;
+}
+
+#img {
+    width: 50px;
+    height: 50px;
+}
+
+#head {
+    border: solid #a5f506;
+    border-radius: 30px;
+    background: #bfec65;
+}
+
+div#menu_a img{
+    text-align: center;
+    height: 40px;
+    width: 40px;
+}
+
+div.row.p-5 a {
+    text-decoration: none;
+    font-size: 10px;
+    color: red;
+}
+
+div.row.p-5 p {
+    margin-bottom: 10px;
+    font-size: 10px;
+}

@@ -7,17 +7,20 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<style type="text/css">
-  .login {
-    height: 200px; width:400px;
-    margin: 0;
-    padding: 10px;
-    border: 2px red solid;
-  }
-  .login input {
-    padding:5px; margin:5px
-  }
-</style>
+<head>
+    <style>
+        .login {
+            height: 200px; width:400px;
+            margin: 0;
+            padding: 10px;
+            border: 2px red solid;
+        }
+        .login input {
+            padding:5px; margin:5px
+        }
+    </style>
+</head>
+
 <body>
 <form method="post" action="/login">
     <div class="login">

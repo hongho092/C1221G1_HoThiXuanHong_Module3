@@ -1,0 +1,49 @@
+body{
+    margin: 50px;
+}
+img{
+    width: 60%;
+    height: 100px;
+    padding-left: 300px;
+    padding-right: 300px;
+    /*filter: contrast(10%);*/
+}
+div#title{
+    position: sticky;
+    top: 0;
+}
+h5{
+    font-size: 25px;
+    padding-bottom: 0px;
+}
+p{
+    font-size: 20px;
+    padding-top: 0px;
+    text-indent: 20px;
+    text-align: justify;
+}
+a{
+    font-size: 20px;
+    text-decoration: none;
+}
+div#menu{
+    border: 2px dotted blue;
+    background: antiquewhite;
+    float: left;
+    padding: 40px;
+    /*position: fixed;*/
+    left: 100px;
+    border-radius: 10px;
+}
+div#main{
+    width: 75%;
+    float: right;
+}
+div#foot{
+    width: 95%;
+    clear: both;
+    background: aqua;
+    color: darkred;
+    position: fixed;
+    bottom: 0;
+}
