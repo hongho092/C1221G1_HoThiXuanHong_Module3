@@ -5,37 +5,90 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ccb04029-a725-449b-8779-688187adf724" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../bt_product_discount_calculator/src/main/java/CalculatorServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/.idea/runConfigurations/Tomcat_9_0_62.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../th_simple_login/.idea/th_simple_login.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/TranslateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple_login/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_java_web_currency_converter/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_java_web_currency_converter/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_java_web_currency_converter/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_java_web_currency_converter/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_java_web_currency_converter/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_java_web_currency_converter/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_java_web_currency_converter/build/classes/java/main/ConverterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/build/classes/java/main/ConverterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_java_web_currency_converter/build/libs/th_java_web_currency_converter-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/build/libs/th_java_web_currency_converter-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_java_web_currency_converter/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_java_web_currency_converter/src/main/java/ConverterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/src/main/java/ConverterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_java_web_currency_converter/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../th_java_web_currency_converter/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_simple_login/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../th_simple_login/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_simple_login/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../th_simple_login/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_simple_login/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../th_simple_login/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_simple_login/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../th_simple_login/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_simple_login/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../th_simple_login/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_simple_login/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../th_simple_login/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_simple_login/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../th_simple_login/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_simple_login/build/libs/simple_login-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../th_simple_login/build/libs/simple_login-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../th_simple_login/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../th_simple_login/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_product_discount_calculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_product_discount_calculator/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_product_discount_calculator/src/main/java/CalculatorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_product_discount_calculator/src/main/java/CalculatorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_product_discount_calculator/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_product_discount_calculator/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/7.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/build/libs/demo-tomcat-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo-tomcat/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../th_login/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/5.2.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/5.2.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.idea/ss9_web.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/build/classes/java/main/controller/StudentServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/build/classes/java/main/controller/TeacherServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/build/libs/ss9_web-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/src/main/java/controller/StudentServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/src/main/java/controller/TeacherServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/src/main/webapp/result_final.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_web/src/main/webapp/sum.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints>
+      <file url="file://$PROJECT_DIR$/src/main/java/TranslateServlet.java" />
+    </disable_hints>
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -64,7 +117,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ss10_JSP_JSTL/th_currency_converter_jsp" />
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.62" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.62" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -168,6 +221,8 @@
       <workItem from="1649755323816" duration="919000" />
       <workItem from="1649768583022" duration="215000" />
       <workItem from="1649770988740" duration="676000" />
+      <workItem from="1649817445693" duration="34000" />
+      <workItem from="1649819637496" duration="374000" />
     </task>
     <servers />
   </component>

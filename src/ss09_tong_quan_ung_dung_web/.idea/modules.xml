@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dang_nhap/dang_nhap_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dang_nhap/dang_nhap_main.iml" group="ss09_tong_quan_ung_dung_web/dang_nhap" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dang_nhap/dang_nhap_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dang_nhap/dang_nhap_test.iml" group="ss09_tong_quan_ung_dung_web/dang_nhap" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ss09_tong_quan_ung_dung_web.iml" filepath="$PROJECT_DIR$/.idea/ss09_tong_quan_ung_dung_web.iml" group="ss09_tong_quan_ung_dung_web" />
+    </modules>
+  </component>
+</project>

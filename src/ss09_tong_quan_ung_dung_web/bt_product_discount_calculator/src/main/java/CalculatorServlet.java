@@ -16,7 +16,7 @@ public class CalculatorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int price = Integer.parseInt(request.getParameter("price"));
         int discount = Integer.parseInt(request.getParameter("discount"));
-        float discountAmount = price * discount;
+        int discountAmount = price * discount * (1/100);
 
         request.setAttribute("number1", price);
         request.setAttribute("number2", discount);
