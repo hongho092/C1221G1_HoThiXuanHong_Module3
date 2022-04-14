@@ -12,15 +12,19 @@ public class CalculatorServlet extends HttpServlet {
         float secondOperand = Integer.parseInt(request.getParameter("sec_ope"));
         String operator = request.getParameter("operator");
         PrintWriter writer = response.getWriter();
-        writer.println("<html>");
-        writer.println("<h1>Result:</h1>");
-        try{
-            float result = Calculator.calculate(firstOperand, secondOperand, operator);
-            writer.println(firstOperand + " " + operator + " " + secondOperand + " = " + result);
-        }catch (Exception ex){
-            writer.println("Error: " + ex.getMessage());
-        }
-        writer.println("</html>");
+        request.setAttribute("fir_ope", firstOperand);
+        request.setAttribute("sec_ope", secondOperand);
+        request.setAttribute("operator", operator);
+        request.getRequestDispatcher("calculator.jsp").forward(request, response);
+//        writer.println("<html>");
+//        writer.println("<h1>Result:</h1>");
+//        try{
+//            float result = Calculator.calculate(firstOperand, secondOperand, operator);
+//            writer.println(firstOperand + " " + operator + " " + secondOperand + " = " + result);
+//        }catch (Exception ex){
+//            writer.println("Error: " + ex.getMessage());
+//        }
+//        writer.println("</html>");
     }
 
     @Override

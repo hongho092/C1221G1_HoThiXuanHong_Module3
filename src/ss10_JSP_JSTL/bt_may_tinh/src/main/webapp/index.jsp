@@ -11,8 +11,9 @@
     <title>$Title$</title>
   </head>
   <body>
-  <h1>Ứng dụng Calculator</h1>
   <form action="/calculator" method="get">
+<fieldset>
+  <legend>Ứng dụng Calculator</legend>
     <lable>First operand: </lable>
     <input type="number" name="fir_ope"><br>
     <lable>Operator: </lable>
@@ -24,6 +25,7 @@
     </select><br>
     <lable>Second operand: <input type="number" name="sec_ope"></lable>
     <input type="submit" value="Result">
+</fieldset>
   </form>
   </body>
 </html>
