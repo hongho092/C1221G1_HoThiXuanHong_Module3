@@ -27,9 +27,4 @@ public class ProductRepositoryImpl implements IProductRepository{
     public void save(Product product) {
         products.add(product);
     }
-
-    @Override
-    public void update(List<Product> products) {
-
-    }
 }

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Cập nhập thông tin sản phẩm</title>
 </head>
 <body>
 <fieldset>
@@ -23,6 +23,6 @@
         <button type="submit">Update Product</button>
     </form>
 </fieldset>
-
+<h3>${show1}</h3>
 </body>
 </html>

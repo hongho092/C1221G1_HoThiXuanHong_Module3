@@ -8,9 +8,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Tìm sản phẩm</title>
 </head>
 <body>
-
+<fieldset>
+    <legend>Find Product</legend>
+    <form method="post">
+        <lable>Input Id_Product</lable>
+        <input type="number" name="id"><br>
+        <button type="submit">Find Product</button>
+    </form>
+</fieldset>
+<h3>${show3}</h3>
+<h4>Name --> ${name}</h4>
+<h4>Color --> ${color}</h4>
 </body>
 </html>

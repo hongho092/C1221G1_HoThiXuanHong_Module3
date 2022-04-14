@@ -34,6 +34,8 @@
 <br><br>
 <button class="btn btn-danger"><a href="/product?action=create">Add Product</a></button>
 <button class="btn btn-danger"><a href="/product?action=update">Update Product</a></button>
+<button class="btn btn-danger"><a href="/product?action=delete">Delete Product</a></button>
+<button class="btn btn-danger"><a href="/product?action=find">Find Product</a></button>
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

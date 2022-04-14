@@ -6,9 +6,35 @@
   <component name="ChangeListManager">
     <list default="true" id="25ea013f-f6e3-43c7-9baf-9d7f87dc2019" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/src/main/webapp/calculator.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../th_quan_li_khach_hang/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/java/repository/ICrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/java/repository/IStudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/java/repository/iplm/StudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/java/service/IStudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/java/service/iplm/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/webapp/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/java/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hien_thi_danh_sach_hoc_vien/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hien_thi_danh_sach_hoc_vien/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hien_thi_danh_sach_hoc_vien/src/main/java/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hien_thi_danh_sach_hoc_vien/src/main/java/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hien_thi_danh_sach_hoc_vien/src/main/java/repository/ICrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hien_thi_danh_sach_hoc_vien/src/main/java/repository/IStudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hien_thi_danh_sach_hoc_vien/src/main/java/repository/impl/StudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hien_thi_danh_sach_hoc_vien/src/main/java/service/IStudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hien_thi_danh_sach_hoc_vien/src/main/java/service/impl/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hien_thi_danh_sach_hoc_vien/src/main/webapp/create.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hien_thi_danh_sach_hoc_vien/src/main/webapp/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/build/classes/java/main/CalculatorServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/build/classes/java/main/CalculatorServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/build/libs/bt_may_tinh-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/build/libs/bt_may_tinh-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/src/main/java/CalculatorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/src/main/java/CalculatorServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
@@ -17,9 +43,23 @@
       <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/build/classes/java/main/controller/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/build/classes/java/main/controller/StudentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/build/classes/java/main/models/Student.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/build/libs/danh_sach_hoc_vien-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/build/libs/danh_sach_hoc_vien-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/java/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/java/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/java/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/java/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/webapp/student_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/danh_sach_hoc_vien/src/main/webapp/student_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/java/controller/ProductControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/java/controller/ProductControllerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/java/repository/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/java/repository/IProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/java/repository/ProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/java/repository/ProductRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/java/service/IProduceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/java/service/IProduceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/java/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/java/service/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/webapp/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/webapp/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/webapp/delete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/webapp/delete.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/webapp/find.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/webapp/find.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/webapp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/webapp/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/webapp/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../bt_quan_li_san_pham/src/main/webapp/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +195,7 @@
       <option name="presentableId" value="Default" />
       <updated>1649908422123</updated>
       <workItem from="1649908423644" duration="3196000" />
+      <workItem from="1649950956571" duration="595000" />
     </task>
     <servers />
   </component>

@@ -23,5 +23,6 @@
     <button type="submit">Add Product</button>
 </form>
 </fieldset>
+<h3>${show}</h3>
 </body>
 </html>
