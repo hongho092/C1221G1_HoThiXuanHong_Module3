@@ -27,4 +27,14 @@ public class ProductRepositoryImpl implements IProductRepository{
     public void save(Product product) {
         products.add(product);
     }
+
+    @Override
+    public Product findProduct(int id) {
+        for (int i=0; i<products.size(); i++) {
+            if (products.get(i).getId() == id) {
+                return products.get(i);
+            }
+        }
+        return null;
+    }
 }

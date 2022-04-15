@@ -11,6 +11,7 @@
     <title>Tìm sản phẩm</title>
 </head>
 <body>
+<button><a href="/product">Back Home</a></button>
 <fieldset>
     <legend>Find Product</legend>
     <form method="post">

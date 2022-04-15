@@ -15,7 +15,7 @@ public class ProductControllerServlet extends HttpServlet {
     private IProduceService iProduceService = new ProductServiceImpl();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
         String action = request.getParameter("action");
 //        System.out.println(action);
         if (action == null) {
@@ -23,28 +23,83 @@ public class ProductControllerServlet extends HttpServlet {
         }
         switch (action) {
             case "create": {
-                request.getRequestDispatcher("create.jsp").forward(request, response);
+                try {
+                    request.getRequestDispatcher("create.jsp").forward(request, response);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 System.out.println("chuyen den trang tao");
+                break;
             }
             case "update": {
-                request.getRequestDispatcher("update.jsp").forward(request, response);
+                try {
+                    request.getRequestDispatcher("update.jsp").forward(request, response);
+
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 System.out.println("chuyen den trang update");
+                break;
             }
             case "delete": {
-                request.getRequestDispatcher("delete.jsp").forward(request, response);
+                try {
+                    request.getRequestDispatcher("delete.jsp").forward(request, response);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 System.out.println("chuyen den trang delete");
+                break;
             }
             case "find": {
-                request.getRequestDispatcher("find.jsp").forward(request, response);
+                try {
+                    request.getRequestDispatcher("find.jsp").forward(request, response);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 System.out.println("chuyen den trang find");
+                break;
+            }
+            case "show": {
+                showProduce(request, response);
+                break;
             }
             default: {
                 List<Product> products = iProduceService.getList();
                 request.setAttribute("products", products);
-                request.getRequestDispatcher("list.jsp").forward(request, response);
+                try {
+                    request.getRequestDispatcher("list.jsp").forward(request, response);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 System.out.println("day la trang hien thi");
             }
         }
+    }
+
+    private void showProduce(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        System.out.println("vao chưa");
+        Product product = this.iProduceService.findById(id);
+        request.setAttribute("product", product);
+        System.out.println("có vao show khong");
+        try {
+            request.getRequestDispatcher("show.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("chuyen den trang show");
     }
 
     @Override
@@ -59,17 +114,21 @@ public class ProductControllerServlet extends HttpServlet {
             case "create": {
                 createProduct(request, response);
                 System.out.println("bat dau tao");
+                break;
             }
             case "update": {
                 updateProduct(request, response);
                 System.out.println("bat dau update");
+                break;
             }
             case "delete": {
                 deleteProduct(request, response);
                 System.out.println("bat dau delete");
+                break;
             }case "find": {
                 findProduct(request, response);
                 System.out.println("bat dau find");
+                break;
             }
         }
     }

@@ -11,6 +11,7 @@
     <title>Tạo sản phẩm mới</title>
 </head>
 <body>
+<button><a href="/product">Back Home</a></button>
 <fieldset>
     <legend>Add Product</legend>
 <form method="post">

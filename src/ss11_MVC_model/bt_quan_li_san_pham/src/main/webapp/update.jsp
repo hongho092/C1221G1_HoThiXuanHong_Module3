@@ -13,6 +13,7 @@
 <body>
 <fieldset>
     <legend>Update Product</legend>
+    <button><a href="/product">Back Home</a></button>
     <form method="post">
         <lable>Input Id_Product</lable>
         <input type="number" name="id"><br>

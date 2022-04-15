@@ -14,7 +14,7 @@
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-<h1 class="text-center">List of Produce</h1>
+<h1 class="text-center">List of Produce</h1><br><br>
 <table class="table table-striped text-center">
     <tr>
         <th>STT</th>
@@ -25,18 +25,19 @@
     <h:forEach varStatus="hong" var="product" items="${products}">
         <tr>
             <td>${hong.count}</td>
-            <td>${product.id}</td>
+            <td><a href="/product?action=show&id=${product.getId()}">${product.id}</a></td>
             <td>${product.name}</td>
             <td>${product.color}</td>
         </tr>
     </h:forEach>
 </table>
 <br><br>
-<button class="btn btn-danger"><a href="/product?action=create">Add Product</a></button>
-<button class="btn btn-danger"><a href="/product?action=update">Update Product</a></button>
-<button class="btn btn-danger"><a href="/product?action=delete">Delete Product</a></button>
-<button class="btn btn-danger"><a href="/product?action=find">Find Product</a></button>
-
+<div class="text-center">
+    <button class="btn btn-danger"><a href="/product?action=create">Add Product</a></button>
+    <button class="btn btn-danger"><a href="/product?action=update">Update Product</a></button>
+    <button class="btn btn-danger"><a href="/product?action=delete">Delete Product</a></button>
+    <button class="btn btn-danger"><a href="/product?action=find">Find Product</a></button>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
