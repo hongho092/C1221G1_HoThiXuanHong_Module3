@@ -141,7 +141,6 @@ public class UserDAO implements IUserDAO{
             PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_USERS_SQL);
             preparedStatement.setString(1, nameCountry);
             ResultSet resultSet =preparedStatement.executeQuery();
-            System.out.println("mrt dbcugfujn");
             User user;
             while (resultSet.next()) {
                 user = new User();

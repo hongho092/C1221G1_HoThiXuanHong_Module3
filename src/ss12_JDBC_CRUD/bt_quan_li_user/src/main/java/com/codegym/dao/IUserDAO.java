@@ -19,5 +19,7 @@ public interface IUserDAO {
     List<User> searchUserByCountry(String nameCountry);
 
     List<User> sortByName();
+
+
 }
 

@@ -52,6 +52,11 @@ dia_chi varchar(45),
 foreign key (ma_loai_khach) references loai_khach_hang(ma_loai_khach)
 );
 
+set foreign_key_checks = off;
+ALTER TABLE `case_study_module3`.`khach_hang` 
+CHANGE COLUMN `ma_khach_hang` `ma_khach_hang` INT NOT NULL AUTO_INCREMENT ;
+set foreign_key_checks = on;
+
 create table kieu_thue(
 ma_kieu_thue int primary key,
 ten_kieu_thue varchar(45)

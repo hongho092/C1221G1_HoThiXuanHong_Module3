@@ -88,12 +88,14 @@ public class ProductControllerServlet extends HttpServlet {
 
     private void showProduce(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        System.out.println("vao chưa");
         Product product = this.iProduceService.findById(id);
-        request.setAttribute("product", product);
-        System.out.println("có vao show khong");
         try {
-            request.getRequestDispatcher("show.jsp").forward(request, response);
+            if (product == null) {
+                request.getRequestDispatcher("404.jsp").forward(request, response);
+            } else {
+                request.setAttribute("product", product);
+                request.getRequestDispatcher("show.jsp").forward(request, response);
+            }
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -136,27 +138,50 @@ public class ProductControllerServlet extends HttpServlet {
     private void findProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> products = iProduceService.getList();
         int id = Integer.parseInt(request.getParameter("id"));
+        boolean check = true;
+        String name = null;
+        String color = null;
         for (int i=0; i<products.size(); i++) {
             if (id == products.get(i).getId()) {
-                String name = products.get(i).getName();
-                String color = products.get(i).getColor();
-                request.setAttribute("show3", "Find Success");
+                name = products.get(i).getName();
+                color = products.get(i).getColor();
+                check = false;
+//                request.setAttribute("show3", "Find Success");
+//                request.setAttribute("name", name);
+//                request.setAttribute("color", color);
+//                request.getRequestDispatcher("find.jsp").forward(request, response);
+            }
+        }
+        if (!check) {
+            request.setAttribute("show3", "Find Success");
                 request.setAttribute("name", name);
                 request.setAttribute("color", color);
                 request.getRequestDispatcher("find.jsp").forward(request, response);
-            }
+        } else {
+            request.getRequestDispatcher("404.jsp").forward(request, response);
         }
     }
 
     private void deleteProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> products = iProduceService.getList();
         int id = Integer.parseInt(request.getParameter("id"));
+        int k = -1;
+        boolean check = true;
         for (int i=0; i<products.size(); i++) {
             if (id == products.get(i).getId()) {
-                products.remove(i);
-                request.setAttribute("show2", "Delete Success");
-                request.getRequestDispatcher("delete.jsp").forward(request, response);
+                k = i;
+                check = false;
+//                products.remove(i);
+//                request.setAttribute("show2", "Delete Success");
+//                request.getRequestDispatcher("delete.jsp").forward(request, response);
             }
+        }
+        if (!check) {
+            products.remove(k);
+            request.setAttribute("show2", "Delete Success");
+            request.getRequestDispatcher("delete.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("404.jsp").forward(request, response);
         }
     }
 

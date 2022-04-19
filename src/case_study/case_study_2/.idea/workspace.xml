@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="38d88b11-605e-4f10-8030-9038ab5e21e0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/build/classes/java/main/controller/ProductControllerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/build/classes/java/main/controller/ProductControllerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/build/libs/bt_quan_li_san_pham-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/build/libs/bt_quan_li_san_pham-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/src/main/java/controller/ProductControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/src/main/java/controller/ProductControllerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/src/main/webapp/404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/src/main/webapp/404.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/src/main/webapp/delete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/src/main/webapp/delete.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="27ui1eXvtF0hJCCp10aHAq1nXzk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38d88b11-605e-4f10-8030-9038ab5e21e0" name="Changes" comment="" />
+      <created>1650176158768</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650176158768</updated>
+      <workItem from="1650176160757" duration="633000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

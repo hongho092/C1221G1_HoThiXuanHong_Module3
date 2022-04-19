@@ -34,6 +34,10 @@ public class UserServlet extends HttpServlet {
                 case "edit":
                     updateUser(request, response);
                     break;
+                case "delete":
+                    deleteUser(request, response);
+                    System.out.println("hdushgdu");
+                    break;
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
@@ -53,9 +57,6 @@ public class UserServlet extends HttpServlet {
                     break;
                 case "edit":
                     showEditForm(request, response);
-                    break;
-                case "delete":
-                    deleteUser(request, response);
                     break;
                 case "search":
                     searchUser(request, response);
@@ -119,7 +120,10 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
         User newUser = new User(name, email, country);
         userDAO.insertUser(newUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/create.jsp");
+        request.setAttribute("show", "Create Success");
+        List<User> listUser = userDAO.selectAllUsers();
+        request.setAttribute("listUser", listUser);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -132,15 +136,18 @@ public class UserServlet extends HttpServlet {
 
         User book = new User(id, name, email, country);
         userDAO.updateUser(book);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/edit.jsp");
+        request.setAttribute("show", "Edit Success");
+        List<User> listUser = userDAO.selectAllUsers();
+        request.setAttribute("listUser", listUser);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         dispatcher.forward(request, response);
     }
 
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
+        System.out.println(id);
         userDAO.deleteUser(id);
-
         List<User> listUser = userDAO.selectAllUsers();
         request.setAttribute("listUser", listUser);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
