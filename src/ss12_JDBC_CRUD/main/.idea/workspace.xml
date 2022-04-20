@@ -2,19 +2,117 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c494b390-f22e-41b7-9a48-a9269292b36e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/J2EE_1_4_J2EE_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/src/main/main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/.idea/case_study.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/repository/impl_repository/ContractRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/repository/impl_repository/CustomerRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/repository/interface_repository/ServiceAllRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/service/impl_service/ContractServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/service/impl_service/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/service/interface_service/ContractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/service/interface_service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/giao_dien.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/view/contract/create_contract.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/view/contract/create_contract_detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/view/contract/show_contract.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/view/contract/show_contract_detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/view/customer/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/view/customer/show.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/view/service/create_service.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/src/main/java/controller/ProductControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_MVC_model/bt_quan_li_san_pham/src/main/java/controller/ProductControllerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_1/table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_1/table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_1/task_2_to_20.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_1/task_2_to_20.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/controller/ContractController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/controller/ContractController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/controller/ContractDetailController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/controller/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/controller/EmployeeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/controller/ServiceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/controller/ServiceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/model/Contract.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/model/Contract.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/model/ContractDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/model/ContractDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/model/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/model/Service.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/repository/impl_repository/CustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/repository/interface_repository/ICustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/service/impl_service/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/classes/java/main/service/interface_service/ICustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/libs/case_study_2-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/libs/case_study_2-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/controller/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/controller/ContractController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/controller/ContractDetailController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/controller/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/controller/ServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/model/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/model/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/model/ContractDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/model/ContractDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/model/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/repository/impl_repository/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/repository/interface_repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/repository/interface_repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/service/impl_service/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/java/service/interface_service/ICustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-grid.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-grid.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-grid.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-grid.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-reboot.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-reboot.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-reboot.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-utilities.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-utilities.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-utilities.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-utilities.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-utilities.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-utilities.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-utilities.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/css/bootstrap.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.esm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.esm.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.esm.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.esm.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/js/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/bootstrap-5.1.3-dist/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/option/bootstrap-5.1.3-dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/customer/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/view/customer/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/case_study_2/case_study_2/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/build/libs/bt_hien_thi_danh_sach-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/build/libs/bt_hien_thi_danh_sach-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/src/main/webapp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_hien_thi_danh_sach/src/main/webapp/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_JSP_JSTL/bt_may_tinh/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +134,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../case_study" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -47,6 +145,8 @@
       <option name="presentableId" value="Default" />
       <updated>1650012955767</updated>
       <workItem from="1650012957255" duration="1754000" />
+      <workItem from="1650382124189" duration="1207000" />
+      <workItem from="1650437477409" duration="2700000" />
     </task>
     <servers />
   </component>
@@ -63,5 +163,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

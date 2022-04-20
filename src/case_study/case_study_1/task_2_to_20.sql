@@ -411,21 +411,7 @@ begin
 end //
 delimiter ;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+delimiter //
+begin
 
 

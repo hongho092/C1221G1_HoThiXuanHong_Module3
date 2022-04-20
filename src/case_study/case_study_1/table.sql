@@ -83,6 +83,11 @@ foreign key (ma_kieu_thue) references kieu_thue(ma_kieu_thue),
 foreign key (ma_loai_dich_vu) references loai_dich_vu(ma_loai_dich_vu)
 );
 
+set foreign_key_checks = off;
+ALTER TABLE `case_study_module3`.`dich_vu` 
+CHANGE COLUMN `ma_dich_vu` `ma_dich_vu` INT NOT NULL AUTO_INCREMENT ;
+set foreign_key_checks = on;
+
 create table hop_dong(
 ma_hop_dong int primary key,
 ngay_lam_hop_dong datetime not null,
@@ -95,6 +100,11 @@ foreign key (ma_nhan_vien) references nhan_vien(ma_nhan_vien),
 foreign key (ma_khach_hang) references khach_hang(ma_khach_hang),
 foreign key (ma_dich_vu) references dich_vu(ma_dich_vu) 
 );
+
+set foreign_key_checks = off;
+ALTER TABLE `case_study_module3`.`hop_dong` 
+CHANGE COLUMN `ma_hop_dong` `ma_hop_dong` INT NOT NULL AUTO_INCREMENT ;
+set foreign_key_checks = on;
 
 create table dich_vu_di_kem(
 ma_dich_vu_di_kem int primary key,
