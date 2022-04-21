@@ -3,7 +3,7 @@ package service.impl_service;
 import model.Contract;
 import model.ContractDetail;
 import repository.impl_repository.ContractRepositoryImpl;
-import repository.interface_repository.ServiceAllRepository;
+import repository.interface_repository.ContractRepository;
 import service.interface_service.ContractService;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class ContractServiceImpl implements ContractService {
 
-    private ServiceAllRepository iServiceAllRepository = new ContractRepositoryImpl();
+    private ContractRepository iServiceAllRepository = new ContractRepositoryImpl();
 
     @Override
     public List<Integer> getMaHopDongHD() {
@@ -58,5 +58,10 @@ public class ContractServiceImpl implements ContractService {
     public Map<Integer, String> getDichVu() {
         Map<Integer, String> dichVu = iServiceAllRepository.getDichVu();
         return dichVu;
+    }
+
+    @Override
+    public void createCT(Contract contract) {
+        iServiceAllRepository.createCT(contract);
     }
 }

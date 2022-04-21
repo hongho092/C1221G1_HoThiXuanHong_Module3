@@ -17,8 +17,12 @@ ma_bo_phan int primary key,
 ten_bo_phan varchar(45)
 );
 
+set foreign_key_checks = off;
+drop table if exists nhan_vien;
+set foreign_key_checks = on;
+
 create table nhan_vien(
-ma_nhan_vien int primary key,
+ma_nhan_vien int primary key auto_increment,
 ho_ten varchar(45) not null,
 ngay_sinh date not null,
 so_cmnd varchar(45) not null,
@@ -29,10 +33,15 @@ dia_chi varchar(45),
 ma_vi_tri int not null,
 ma_trinh_do int not null,
 ma_bo_phan int not null,
-foreign key (ma_vi_tri) references vi_tri(ma_vi_tri),
-foreign key (ma_trinh_do) references trinh_do(ma_trinh_do),
-foreign key (ma_bo_phan) references bo_phan(ma_bo_phan)
+foreign key (ma_vi_tri) references vi_tri(ma_vi_tri) on update cascade on delete cascade,
+foreign key (ma_trinh_do) references trinh_do(ma_trinh_do) on update cascade on delete cascade,
+foreign key (ma_bo_phan) references bo_phan(ma_bo_phan) on update cascade on delete cascade
 );
+
+set foreign_key_checks = off;
+ALTER TABLE `case_study_module3`.`nhan_vien` 
+CHANGE COLUMN `ma_nhan_vien` `ma_nhan_vien` INT NOT NULL AUTO_INCREMENT ;
+set foreign_key_checks = on;
 
 create table loai_khach_hang(
 ma_loai_khach int primary key,

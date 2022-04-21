@@ -17,4 +17,6 @@ public interface CustomerService {
     void deleteCustomer(int id);
 
     Map<Integer, String> getLoaiKhach();
+
+    List<Customer> getCustomerByName(String name);
 }

@@ -16,4 +16,6 @@ public interface CustomerRepository {
     void deleteCustomer(int id);
 
     Map<Integer, String> getMaLoaiKhach();
+
+    List<Customer> getCustomerByName(String name);
 }

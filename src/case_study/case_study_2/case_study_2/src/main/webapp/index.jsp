@@ -11,13 +11,14 @@
     <div class="col-2 text-center mt-3 mb-3"><a href="#"><img src="https://www.svgrepo.com/show/415505/building-india-landmark.svg"></a></div>
     <div class="col-10 text-end mt-3 mb-3"><h3 class="text-danger">Ho Thi Xuan Hong</h3></div>
   </div>
-  <div class="col-12 sticky-top mt-2">
-    <nav class="navbar navbar-light bg-light">
+  <div class="row sticky-top mt-2 bg bg-light">
+    <div class="col-2"></div>
+    <nav class="navbar navbar-light bg-light col-8">
       <span class="container-fluid">
         <a class="navbar-brand" href="index.jsp">Home</a>
         <a class="navbar-brand" href="/employee">Employee</a>
         <a class="navbar-brand" href="/customer">Customer</a>
-        <a class="navbar-brand" href="/serviceAllController?action=showService">Service</a>
+        <a class="navbar-brand" href="/service">Service</a>
         <div class="dropdown">
           <a class="navbar-brand dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Contract</a>
           </button>
@@ -26,12 +27,9 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
-        <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </span>
     </nav>
+    <div class="col-2"></div>
   </div>
   <div class="row border border-1">
     <div class="col-2 border border-1 mt-2 text-center">

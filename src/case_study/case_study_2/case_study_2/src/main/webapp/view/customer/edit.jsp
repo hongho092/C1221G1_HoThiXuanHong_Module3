@@ -13,13 +13,14 @@
             src="https://www.svgrepo.com/show/415505/building-india-landmark.svg"></a></div>
     <div class="col-10 text-end mt-3 mb-3"><h3 class="text-danger">Ho Thi Xuan Hong</h3></div>
 </div>
-<div class="col-12 sticky-top mt-2">
-    <nav class="navbar navbar-light bg-light">
+<div class="row sticky-top mt-2 bg bg-light">
+    <div class="col-2"></div>
+    <nav class="navbar navbar-light bg-light col-8">
       <span class="container-fluid">
         <a class="navbar-brand" href="index.jsp">Home</a>
         <a class="navbar-brand" href="/employee">Employee</a>
         <a class="navbar-brand" href="/customer">Customer</a>
-        <a class="navbar-brand" href="/serviceAllController?action=showService">Service</a>
+        <a class="navbar-brand" href="/service">Service</a>
         <div class="dropdown">
           <a class="navbar-brand dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Contract</a>
             </button>
@@ -28,86 +29,97 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
-        <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </span>
     </nav>
+    <div class="col-2"></div>
 </div>
-<div class="col-12 border border-1 bg-light mt-5">
-
-    <h4 class="text-center mt-5">Edit Customer</h4><br>
-    <form method="post">
-        <div class="row">
-            <div class="col-4">
-                <label for="form0" class="form-label">Mã khách hàng</label>
-                <input type="number" class="form-control" id="form0" value="${customer.maKhachHang}" name="maKhachHang">
-            </div>
-            <div class="col-4">
-                <label for="form1" class="form-label">Loại khách hàng</label>
-<%--                <input type="number" class="form-control" id="form1" value="${customer.maLoaiKhach}" name="maLoaiKhach">--%>
-                <select class="form-select" aria-label="Default select example" name="maLoaiKhach">
-                    <option selected id="form1" value="${customer.maLoaiKhach}">
-                        <h:if test="${customer.maLoaiKhach == 1}">
-                            Diamond
-                        </h:if>
-                        <h:if test="${customer.maLoaiKhach == 2}">
-                            Platinium
-                        </h:if>
-                        <h:if test="${customer.maLoaiKhach == 3}">
-                            Gold
-                        </h:if>
-                        <h:if test="${customer.maLoaiKhach == 4}">
-                            Silver
-                        </h:if>
-                        <h:if test="${customer.maLoaiKhach == 5}">
-                            Member
-                        </h:if>
-<%--                        ${customer.maLoaiKhach}--%>
-                    </option>
-                    <h:forEach items="${lkh.entrySet()}" var="lkh">
-                        <option value="${lkh.getKey()}">${lkh.getValue()}</option>
-                    </h:forEach>
-                </select>
-            </div>
-            <div class="col-4">
-                <label for="form2" class="form-label">Họ tên</label>
-                <input type="text" class="form-control" id="form2" value="${customer.hoTen}" name="hoTen">
-            </div>
-            <div class="mb-3 col-4">
-                <label for="form3" class="form-label">Ngày sinh</label>
-                <input type="date" class="form-control" id="form3" value="${customer.ngaySinh}" name="ngaySinh">
-            </div>
-            <%--            <select class="form-select" aria-label="Default select example" name="gioiTinh">--%>
-            <%--                <option selected>Open this select menu</option>--%>
-            <%--                <option value="1">One</option>--%>
-            <%--                <option value="2">Two</option>--%>
-            <%--                <option value="3">Three</option>--%>
-            <%--            </select>--%>
-            <div class="mb-3 col-4">
-                <label for="form4" class="form-label">Giới tính</label>
-                <input type="text" class="form-control col" id="form4" value="${customer.gioiTinh}" name="gioiTinh">
-            </div>
-            <div class="mb-3 col-4">
-                <label for="form5" class="form-label">Số CMND</label>
-                <input type="text" class="form-control col" id="form5" value="${customer.soCMND}" name="soCMND">
-            </div>
-            <div class="mb-3 col-4">
-                <label for="form6" class="form-label">Số điện thoại</label>
-                <input type="text" class="form-control col" id="form6" value="${customer.soDienThoai}" name="soDienThoai">
-            </div>
-            <div class="mb-3 col-4">
-                <label for="form7" class="form-label">Email</label>
-                <input type="text" class="form-control" id="form7" value="${customer.email}" name="email">
-            </div>
-            <div class="mb-3 col-4">
-                <label for="form8" class="form-label">Địa Chỉ</label>
-                <input type="text" class="form-control" id="form8" value="${customer.diaChi}" name="diaChi">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Sửa thông tin khách</button>
-    </form>
+<div class="row border border-1 mt-5">
+    <div class="col-2"></div>
+    <div class="col-8 bg-light text-center">
+        <h4 class="text-center mt-5">Sửa thông tin KHÁCH HÀNG</h4><br>
+        <form method="post">
+            <table class="table table-striped text-center">
+                <tr>
+                    <th>Thông tin</th>
+                    <th>Chi tiết</th>
+                </tr>
+                <tr>
+                    <td><label for="form0" class="form-label">Mã khách hàng</label></td>
+                    <td><input type="number" class="form-control" id="form0" value="${customer.maKhachHang}" name="maKhachHang"></td>
+                </tr>
+                <tr>
+                    <td><label for="form1" class="form-label">Loại khách hàng</label></td>
+                    <td>
+                        <select class="form-select" aria-label="Default select example" name="maLoaiKhach">
+                            <option selected id="form1" value="${customer.maLoaiKhach}">
+                                <h:if test="${customer.maLoaiKhach == 1}">
+                                    Diamond
+                                </h:if>
+                                <h:if test="${customer.maLoaiKhach == 2}">
+                                    Platinium
+                                </h:if>
+                                <h:if test="${customer.maLoaiKhach == 3}">
+                                    Gold
+                                </h:if>
+                                <h:if test="${customer.maLoaiKhach == 4}">
+                                    Silver
+                                </h:if>
+                                <h:if test="${customer.maLoaiKhach == 5}">
+                                    Member
+                                </h:if>
+                            </option>
+                            <h:forEach items="${lkh.entrySet()}" var="lkh">
+                                <option value="${lkh.getKey()}">${lkh.getValue()}</option>
+                            </h:forEach>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="form2" class="form-label">Họ tên</label></td>
+                    <td><input type="text" class="form-control" id="form2" value="${customer.hoTen}" name="hoTen"></td>
+                </tr>
+                <tr>
+                    <td><label for="form3" class="form-label">Ngày sinh</label></td>
+                    <td><input type="date" class="form-control" id="form3" value="${customer.ngaySinh}" name="ngaySinh"></td>
+                </tr>
+                <tr>
+                    <td><label for="form4" class="form-label">Giới tính</label></td>
+                    <td>
+                        <select class="form-select" aria-label="Default select example" id="form4" name="gioiTinh">
+                            <option selected value="${customer.gioiTinh}">
+                                <h:if test="${customer.gioiTinh == 0}">
+                                    Nữ
+                                </h:if>
+                                <h:if test="${customer.gioiTinh == 1}">
+                                    Nam
+                                </h:if>
+                            </option>
+                            <option value="0">Nữ</option>
+                            <option value="1">Nam</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="form5" class="form-label">Số CMND</label></td>
+                    <td><input type="text" class="form-control col" id="form5" value="${customer.soCMND}" name="soCMND"></td>
+                </tr>
+                <tr>
+                    <td><label for="form6" class="form-label">Số điện thoại</label></td>
+                    <td><input type="text" class="form-control col" id="form6" value="${customer.soDienThoai}" name="soDienThoai"></td>
+                </tr>
+                <tr>
+                    <td><label for="form7" class="form-label">Email</label></td>
+                    <td><input type="text" class="form-control" id="form7" value="${customer.email}" name="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="form8" class="form-label">Địa chỉ</label></td>
+                    <td><input type="text" class="form-control" id="form8" value="${customer.diaChi}" name="diaChi"></td>
+                </tr>
+            </table>
+            <button type="submit" class="btn btn-primary">Sửa khách hàng</button>
+        </form>
+    </div>
+    <div class="col-2"></div>
 </div>
 <div class="col-12 border border-1 text-center mt-3">
     <h5>---FOOTER---</h5>

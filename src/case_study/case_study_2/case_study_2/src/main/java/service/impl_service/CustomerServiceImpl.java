@@ -42,4 +42,10 @@ public class CustomerServiceImpl implements service.interface_service.CustomerSe
         Map<Integer, String> maLoaiKhach = iCustomerRepository.getMaLoaiKhach();
         return maLoaiKhach;
     }
+
+    @Override
+    public List<Customer> getCustomerByName(String name) {
+        List<Customer> customers = iCustomerRepository.getCustomerByName(name);
+        return customers;
+    }
 }

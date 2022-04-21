@@ -19,6 +19,7 @@ public class ContractController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
         System.out.println(action);
         if (action == null) {
@@ -83,6 +84,7 @@ public class ContractController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
         System.out.println(action);
         if (action == null) {
@@ -93,6 +95,31 @@ public class ContractController extends HttpServlet {
                 createCD(request, response);
                 break;
             }
+            case "createContract": {
+                createCT(request, response);
+                break;
+            }
+        }
+    }
+
+    private void createCT(HttpServletRequest request, HttpServletResponse response) {
+        Contract contract = new Contract();
+        contract.setNgayLamHopDong(request.getParameter("ngayLamHopDong"));
+        contract.setNgayKetThuc(request.getParameter("ngayKetThuc"));
+        contract.setTienDatCoc(Double.parseDouble(request.getParameter("tienDatCoc")));
+        contract.setMaNhanVien(Integer.parseInt(request.getParameter("maNhanVien")));
+        contract.setMaKhachHang(Integer.parseInt(request.getParameter("maKhachHang")));
+        contract.setMaDichVu(Integer.parseInt(request.getParameter("maDichVu")));
+        iServiceAllService.createCT(contract);
+        request.setAttribute("show", "Tạo hợp đồng thành công");
+        List<Contract> contracts = iServiceAllService.getListContract();
+        request.setAttribute("ct", contracts);
+        try {
+            request.getRequestDispatcher("view/contract/show_contract.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -102,7 +129,7 @@ public class ContractController extends HttpServlet {
         contractDetail.setMaDichVuDiKem(Integer.parseInt(request.getParameter("maDichVuDiKem")));
         contractDetail.setSoLuong(Integer.parseInt(request.getParameter("soLuong")));
         iServiceAllService.createCD(contractDetail);
-        request.setAttribute("show", "Create Success");
+        request.setAttribute("show", "Tạo hợp đồng chi tiết thành công");
         List<ContractDetail> contractDetails = iServiceAllService.getListContractDetail();
         request.setAttribute("cds", contractDetails);
         try {

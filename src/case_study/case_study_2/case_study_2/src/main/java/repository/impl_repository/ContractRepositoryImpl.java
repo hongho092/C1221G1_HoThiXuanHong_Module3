@@ -3,8 +3,8 @@ package repository.impl_repository;
 import model.Contract;
 import model.ContractDetail;
 import repository.BaseRepository;
+import repository.interface_repository.ContractRepository;
 
-import javax.imageio.stream.ImageInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ContractRepositoryImpl implements repository.interface_repository.ServiceAllRepository {
+public class ContractRepositoryImpl implements ContractRepository {
 
     private BaseRepository baseRepository = new BaseRepository();
 
@@ -26,6 +26,7 @@ public class ContractRepositoryImpl implements repository.interface_repository.S
     private static final String LIST_CUSTOMER_CONTRACT = "select ma_khach_hang, ho_ten from khach_hang order by ma_khach_hang;";
     private static final String LIST_EMPLOYEE_CONTRACT = "select ma_nhan_vien, ho_ten from nhan_vien order by ma_nhan_vien;";
     private static final String LIST_SERVICE = "select ma_dich_vu, ten_dich_vu from dich_vu order by ma_dich_vu;";
+    private static final String CREATE_CT = "insert into hop_dong (ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, ma_nhan_vien, ma_khach_hang, ma_dich_vu) value (?, ?, ?, ?, ?, ?);";
 
     @Override
     public List<Integer> getMaHopDongHD() {
@@ -236,5 +237,22 @@ public class ContractRepositoryImpl implements repository.interface_repository.S
             }
         }
         return dichVu;
+    }
+
+    @Override
+    public void createCT(Contract contract) {
+        try {
+            PreparedStatement preparedStatement = baseRepository.getConnection().prepareStatement(CREATE_CT);
+            preparedStatement.setString(1, contract.getNgayLamHopDong());
+            preparedStatement.setString(2,contract.getNgayKetThuc());
+            preparedStatement.setInt(3, (int) contract.getTienDatCoc());
+            preparedStatement.setInt(4, contract.getMaNhanVien());
+            preparedStatement.setInt(5, contract.getMaKhachHang());
+            preparedStatement.setInt(6, contract.getMaDichVu());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

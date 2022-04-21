@@ -20,13 +20,13 @@
             src="https://www.svgrepo.com/show/415505/building-india-landmark.svg"></a></div>
     <div class="col-10 text-end mt-3 mb-3"><h3 class="text-danger">Ho Thi Xuan Hong</h3></div>
 </div>
-<div class="col-12 sticky-top mt-2">
+<div class="row sticky-top mt-2 bg bg-light">
     <nav class="navbar navbar-light bg-light">
       <span class="container-fluid">
         <a class="navbar-brand" href="index.jsp">Home</a>
         <a class="navbar-brand" href="/employee">Employee</a>
         <a class="navbar-brand" href="/customer">Customer</a>
-        <a class="navbar-brand" href="/serviceAllController?action=showService">Service</a>
+        <a class="navbar-brand" href="/service">Service</a>
         <div class="dropdown">
           <a class="navbar-brand dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Contract</a>
             </button>
@@ -43,40 +43,47 @@
     </nav>
 </div>
 <div class="row border border-1">
-    <div class="col-2 border border-1 mt-2 text-center">
-
-    </div>
-    <div class="col-10 bg-light">
-        <h4 class="text-center mt-5">Tạo hợp đồng chi tiết</h4><br>
+    <div class="col-2"></div>
+    <div class="col-8 bg-light text-center">
+        <h4 class="text-center mt-5">Nhập thông tin HỢP ĐỒNG CHI TIẾT</h4><br>
         <h5 class="text-end me-5 text-success">${show}</h5><br>
         <form method="post">
-            <div class="row">
-                <div class="col-4">
-                    <label for="form1" class="form-label">Mã hợp đồng</label>
-                    <select class="form-select" aria-label="Default select example" name="maHopDong" id="form1">
-                        <option selected>--Nhấn vào để chọn--</option>
-                        <h:forEach items="${mhd}" var="mhd">
-                            <option value="${mhd}">${mhd}</option>
-                        </h:forEach>
-                    </select>
-                </div>
-                <div class="col-4">
-                    <label for="form2" class="form-label">Mã dịch vụ đi kèm</label>
-                    <select class="form-select" aria-label="Default select example" name="maDichVuDiKem" id="form2">
-                        <option selected>--Nhấn vào để chọn--</option>
-                        <h:forEach items="${hdct.entrySet()}" var="entry">
-                            <option value="${entry.getKey()}">${entry.getValue()}</option>
-                        </h:forEach>
-                    </select>
-                </div>
-                <div class="mb-3 col-4">
-                    <label for="form3" class="form-label">Số lượng</label>
-                    <input type="int" class="form-control" id="form3" name="soLuong">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <table class="table table-striped text-center">
+                <tr>
+                    <th>Thông tin</th>
+                    <th>Chi tiết</th>
+                </tr>
+                <tr>
+                    <td><label for="form1" class="form-label">Mã hợp đồng</label></td>
+                    <td>
+                        <select class="form-select" aria-label="Default select example" name="maHopDong" id="form1">
+                            <option selected>--Nhấn vào để chọn--</option>
+                            <h:forEach items="${mhd}" var="mhd">
+                                <option value="${mhd}">${mhd}</option>
+                            </h:forEach>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="form2" class="form-label">Mã dịch vụ đi kèm</label></td>
+                    <td>
+                        <select class="form-select" aria-label="Default select example" name="maDichVuDiKem" id="form2">
+                            <option selected>--Nhấn vào để chọn--</option>
+                            <h:forEach items="${hdct.entrySet()}" var="entry">
+                                <option value="${entry.getKey()}">${entry.getValue()}</option>
+                            </h:forEach>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="form3" class="form-label">Số lượng</label></td>
+                    <td><input type="int" class="form-control" id="form3" name="soLuong"></td>
+                </tr>
+            </table>
+            <button type="submit" class="btn btn-primary">Tạo hợp đồng chi tiết</button>
         </form>
     </div>
+    <div class="col-2"></div>
 </div>
 <div class="col-12 border border-1 text-center mt-3">
     <h5>---FOOTER---</h5>

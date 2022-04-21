@@ -23,4 +23,6 @@ public interface ContractService {
     Map<Integer, String> getKhachHangHD();
 
     Map<Integer, String> getDichVu();
+
+    void createCT(Contract contract);
 }

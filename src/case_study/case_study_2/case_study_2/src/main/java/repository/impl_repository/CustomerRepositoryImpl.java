@@ -16,9 +16,10 @@ public class CustomerRepositoryImpl implements repository.interface_repository.C
     private static final String SELECT_CUSTOMER = "select * from khach_hang";
     private static final String CREATE_CUSTOMER = "insert into khach_hang(ma_loai_khach, ho_ten, ngay_sinh, gioi_tinh, so_cmnd, so_dien_thoai, email, dia_chi) value (?, ?, ?, ?, ?, ?, ?, ?);";
     private static final String FIND_CUSTOMER = "select * from khach_hang where ma_khach_hang = ?;";
-    private static final String EDIT_CUSTOMER = "update khach_hang set ma_loai_khach=?, ho_ten=?, ngay_sinh=?, gioi_tinh=?, so_cmnd=?, so_dien_thoai=?, email=?, dia_chi=? where ma_khach_hang=?;";
-    private static final String DELETE_CUSTOMER = "call deleteCustomer(?)";
+    private static final String EDIT_CUSTOMER = "update khach_hang set ho_ten=?, ngay_sinh=?, gioi_tinh=?, so_cmnd=?, so_dien_thoai=?, email=?, dia_chi=? where ma_khach_hang=?;";
+    private static final String DELETE_CUSTOMER = "call deleteCustomer(?);";
     private static final String TYPE_CUSTOMER = "select * from loai_khach_hang;";
+    private static final String SEARCH_CUSTOMER = "select * from khach_hang where ho_ten like ?;";
 
 
     @Override
@@ -120,15 +121,14 @@ public class CustomerRepositoryImpl implements repository.interface_repository.C
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(EDIT_CUSTOMER);
-            preparedStatement.setInt(1, customer.getMaLoaiKhach());
-            preparedStatement.setString(2, customer.getHoTen());
-            preparedStatement.setString(3, customer.getNgaySinh());
-            preparedStatement.setInt(4, customer.getGioiTinh());
-            preparedStatement.setString(5, customer.getSoCMND());
-            preparedStatement.setString(6, customer.getSoDienThoai());
-            preparedStatement.setString(7, customer.getEmail());
-            preparedStatement.setString(8, customer.getDiaChi());
-            preparedStatement.setInt(9, customer.getMaKhachHang());
+            preparedStatement.setString(1, customer.getHoTen());
+            preparedStatement.setString(2, customer.getNgaySinh());
+            preparedStatement.setInt(3, customer.getGioiTinh());
+            preparedStatement.setString(4, customer.getSoCMND());
+            preparedStatement.setString(5, customer.getSoDienThoai());
+            preparedStatement.setString(6, customer.getEmail());
+            preparedStatement.setString(7, customer.getDiaChi());
+            preparedStatement.setInt(8, customer.getMaKhachHang());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -183,5 +183,32 @@ public class CustomerRepositoryImpl implements repository.interface_repository.C
             }
         }
         return loaiKhachHang;
+    }
+
+    @Override
+    public List<Customer> getCustomerByName(String name) {
+        List<Customer> customers = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = baseRepository.getConnection().prepareStatement(SEARCH_CUSTOMER);
+            preparedStatement.setString(1, "%"+name+"%");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            Customer customer;
+            while (resultSet.next()) {
+                customer = new Customer();
+                customer.setMaKhachHang(resultSet.getInt("ma_khach_hang"));
+                customer.setMaLoaiKhach(resultSet.getInt("ma_loai_khach"));
+                customer.setHoTen(resultSet.getString("ho_ten"));
+                customer.setNgaySinh(resultSet.getString("ngay_sinh"));
+                customer.setGioiTinh(resultSet.getInt("gioi_tinh"));
+                customer.setSoCMND(resultSet.getString("so_cmnd"));
+                customer.setSoDienThoai(resultSet.getString("so_dien_thoai"));
+                customer.setEmail(resultSet.getString("email"));
+                customer.setDiaChi(resultSet.getString("dia_chi"));
+                customers.add(customer);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return customers;
     }
 }

@@ -15,13 +15,14 @@
             src="https://www.svgrepo.com/show/415505/building-india-landmark.svg"></a></div>
     <div class="col-10 text-end mt-3 mb-3"><h3 class="text-danger">Ho Thi Xuan Hong</h3></div>
 </div>
-<div class="col-12 sticky-top mt-2">
-    <nav class="navbar navbar-light bg-light">
+<div class="row sticky-top mt-2 bg bg-light">
+    <div class="col-2"></div>
+    <nav class="navbar navbar-light bg-light col-8">
       <span class="container-fluid">
         <a class="navbar-brand" href="index.jsp">Home</a>
         <a class="navbar-brand" href="/employee">Employee</a>
         <a class="navbar-brand" href="/customer">Customer</a>
-        <a class="navbar-brand" href="/serviceAllController?action=showService">Service</a>
+        <a class="navbar-brand" href="/service">Service</a>
         <div class="dropdown">
           <a class="navbar-brand dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Contract</a>
             </button>
@@ -30,16 +31,21 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
-        <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </span>
     </nav>
+    <div class="col-2"></div>
 </div>
 <div class="col-12 border border-1 bg-light text-center">
-    <h4 class="mt-5">List Customer</h4><br>
-    <button class="btn btn-warning mt-5 text-start mt-3"><a href="/customer?action=create" class="text-decoration-none">Create Customer</a></button><br>
+    <div class="row mt-5 ">
+        <div class="col-4"></div>
+        <h4 class="col-4">Danh sách KHÁCH HÀNG</h4><br>
+        <form class="d-flex col-4" action="/customer">
+            <input type="hidden" name="action" value="search">
+            <input class="form-control me-2" type="text" placeholder="Tên khách hàng muốn tìm" name="name">
+            <button class="btn btn-outline-success" type="submit">Tìm</button>
+        </form>
+    </div>
+    <button class="btn btn-warning mt-2 text-start mt-3"><a href="/customer?action=create" class="text-decoration-none">Tạo KHÁCH HÀNG</a></button><br>
     <h5 class="text-end me-5 text-success">${show}</h5><br>
     <table class="table table-striped text-center" id="tableStudent">
         <thead>
@@ -63,24 +69,14 @@
                     <td>${hong.count}</td>
                     <td>${customer.maKhachHang}</td>
                     <td>
-<%--                        ${customer.maLoaiKhach}--%>
-<%--                        <h:if test="${customer.gioiTinh == 0}">--%>
-<%--                            Nữ--%>
-<%--                        </h:if>--%>
-<%--                        <h:if test="${customer.gioiTinh == 1}">--%>
-<%--                            Nam--%>
-<%--                        </h:if>--%>
-                        <h:choose>
-                            <h:when test="${customer.maLoaiKhach == 1}">Diamond</h:when>
-                            <h:when test="${customer.maLoaiKhach == 2}">Platinium</h:when>
-                            <h:when test="${customer.maLoaiKhach == 3}">Gold</h:when>
-                            <h:when test="${customer.maLoaiKhach == 4}">Silver</h:when>
-                            <h:when test="${customer.maLoaiKhach == 5}">Member</h:when>
-                        </h:choose>
+                        <h:forEach items="${lkh.entrySet()}" var="lkh">
+                            <h:if test="${customer.maLoaiKhach == lkh.getKey()}">
+                                ${lkh.getValue()}
+                            </h:if>
+                        </h:forEach>
                     </td>
                     <td>${customer.hoTen}</td>
                     <td>${customer.ngaySinh}</td>
-<%--                    <td>${customer.gioiTinh}</td>--%>
                     <td>
                         <h:if test="${customer.gioiTinh == 0}">
                             Nữ
@@ -95,14 +91,13 @@
                     <td>${customer.diaChi}</td>
                     <td>
                         <button class="btn btn-warning"><a class="text-decoration-none" href="customer?action=edit&id=${customer.maKhachHang}">Sửa</a></button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="deleteModal(${customer.maKhachHang})">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="deleteModal(${customer.maKhachHang}, '${customer.hoTen}')">Xóa</button>
                     </td>
                 </tr>
             </h:forEach>
         </tbody>
     </table><br>
 </div>
-<%--<h5>${show}</h5>--%>
 <div class="col-12 border border-1 text-center mt-3">
     <h5>---FOOTER---</h5>
 </div>
@@ -118,8 +113,8 @@
                 <input type="hidden" name="action" value="delete">
                 <div class="modal-body">
                     <input type="hidden" id="idCustomerDelete" name="id">
-                    Bạn có chắc muốn xóa <span id="idDelete"></span> không?
-                    Sẽ không thể hoàn tác nếu bạn đã xóa!
+                    <p>Bạn có chắc muốn xóa khách hàng có mã là <span id="idDelete"></span> và tên là "<span id="nameDelete"></span>" không?</p>
+                    <p class="text-danger">Sẽ không thể hoàn tác nếu bạn đã xóa!</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
@@ -149,8 +144,9 @@
     } );
 </script>
 <script>
-    function deleteModal(id) {
+    function deleteModal(id, name) {
         document.getElementById("idDelete").innerText = id;
+        document.getElementById("nameDelete").innerText = name;
         document.getElementById("idCustomerDelete").value = id;
     }
 </script>
