@@ -31,6 +31,7 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
+        <a class="navbar-brand" href="/customer_service">Customer_Service_Now</a>
       </span>
     </nav>
     <div class="col-2"></div>
@@ -48,11 +49,20 @@
                 <ul class="dropdown-menu">
                     <div class="input-group mb-2">
                         <span class="input-group-text">Tên</span>
-                        <input type="text" class="form-control" name="ten">
+                        <input type="text" class="form-control" name="name">
                     </div>
                     <div class="input-group mb-2">
                         <span class="input-group-text">Địa chỉ</span>
-                        <input type="text" class="form-control" name="dia-chi">
+                        <input type="text" class="form-control" name="address">
+                    </div>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text">Vị trí</span>
+                        <select class="form-select form-control" aria-label="Default select example" name="maViTri">
+                            <option selected value="0">Chọn VT</option>
+                            <h:forEach items="${vt.entrySet()}" var="vt">
+                                <option value="${vt.getKey()}">${vt.getValue()}</option>
+                            </h:forEach>
+                        </select>
                     </div>
                     <div class="text-end">
                         <button class="btn btn-primary" type="submit">Tìm kiếm</button>
@@ -78,9 +88,9 @@
             <th>Số điện thoại</th>
             <th>Email</th>
             <th>Địa chỉ</th>
-            <th>Mã vị trí</th>
-            <th>Mã trình độ</th>
-            <th>Mã bộ phận</th>
+            <th>Vị trí</th>
+            <th>Trình độ</th>
+            <th>Bộ phận</th>
         </tr>
         </thead>
         <tbody>

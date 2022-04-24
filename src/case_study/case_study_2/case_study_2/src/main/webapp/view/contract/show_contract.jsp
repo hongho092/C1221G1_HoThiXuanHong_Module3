@@ -31,6 +31,7 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
+        <a class="navbar-brand" href="/customer_service">Customer_Service_Now</a>
       </span>
     </nav>
     <div class="col-2"></div>
@@ -47,9 +48,9 @@
             <th>Ngày làm hợp đồng</th>
             <th>Ngày kết thúc</th>
             <th>Tiền đặt cọc</th>
-            <th>Mã nhân viên</th>
-            <th>Mã khách hàng</th>
-            <th>Mã dịch vụ</th>
+            <th>Tên nhân viên</th>
+            <th>Tên khách hàng</th>
+            <th>Tên dịch vụ</th>
         </tr>
         </thead>
         <tbody>
@@ -60,9 +61,27 @@
                 <td>${cd.ngayLamHopDong}</td>
                 <td>${cd.ngayKetThuc}</td>
                 <td>${cd.tienDatCoc}</td>
-                <td>${cd.maNhanVien}</td>
-                <td>${cd.maKhachHang}</td>
-                <td>${cd.maDichVu}</td>
+                <td>
+                    <h:forEach items="${nvhd.entrySet()}" var="entry">
+                        <h:if test="${cd.maNhanVien == entry.getKey()}">
+                            ${entry.getValue()}
+                        </h:if>
+                    </h:forEach>
+                </td>
+                <td>
+                    <h:forEach items="${khhd.entrySet()}" var="entry">
+                        <h:if test="${cd.maKhachHang == entry.getKey()}">
+                            ${entry.getValue()}
+                        </h:if>
+                    </h:forEach>
+                </td>
+                <td>
+                    <h:forEach items="${dv.entrySet()}" var="entry">
+                        <h:if test="${cd.maDichVu == entry.getKey()}">
+                            ${entry.getValue()}
+                        </h:if>
+                    </h:forEach>
+                </td>
             </tr>
         </h:forEach>
         </tbody>
@@ -88,12 +107,6 @@
             "pageLength": 5
         } );
     } );
-</script>
-<script>
-    function deleteModal(id) {
-        document.getElementById("idDelete").innerText = id;
-        document.getElementById("idCustomerDelete").value = id;
-    }
 </script>
 </body>
 </html>

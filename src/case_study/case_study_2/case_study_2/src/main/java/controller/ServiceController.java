@@ -101,8 +101,13 @@ public class ServiceController extends HttpServlet {
         service.setMoTaTienNghiKhac(request.getParameter("moTaTienNghiKhac"));
         service.setDienTichHoBoi(Double.parseDouble(request.getParameter("dienTichHoBoi")));
         service.setSoTang(Integer.parseInt(request.getParameter("soTang")));
-        serviceService.createService(service);
-        request.setAttribute("show", "Tạo dịch vụ thành công");
-        goToList(request, response);
+        Map<String, String> map = serviceService.createService(service);
+        if (map.isEmpty()) {
+            request.setAttribute("show", "Tạo dịch vụ thành công");
+            goToList(request, response);
+        } else {
+            request.setAttribute("error", map);
+            getInfoToService(request, response);
+        }
     }
 }

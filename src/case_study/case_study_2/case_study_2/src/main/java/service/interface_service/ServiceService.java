@@ -12,5 +12,5 @@ public interface ServiceService {
 
     Map<Integer, String> getTypeRent();
 
-    void createService(Service service);
+    Map<String, String> createService(Service service);
 }

@@ -412,6 +412,47 @@ end //
 delimiter ;
 
 delimiter //
+create procedure deleteCustomer(in id int)
 begin
+set foreign_key_checks = off;
+delete from khach_hang where ma_khach_hang= id;
+set foreign_key_checks = on;
+end //
+delimiter ;
+
+call delete_customer(8);
+
+delimiter //
+create procedure deleteEmployee(in id int)
+begin
+set foreign_key_checks = off;
+delete from nhan_vien where ma_nhan_vien= id;
+set foreign_key_checks = on;
+end //
+delimiter ;
+
+select hop_dong.ma_hop_dong, khach_hang.ho_ten, dich_vu.ten_dich_vu, dich_vu.mo_ta_tien_nghi_khac, dich_vu.chi_phi_thue, 
+dich_vu_di_kem.ten_dich_vu_di_kem, hop_dong_chi_tiet.so_luong
+from khach_hang
+inner join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
+inner join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
+left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+left join dich_vu_di_kem on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem
+where now() between hop_dong.ngay_lam_hop_dong and hop_dong.ngay_ket_thuc; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -29,6 +29,7 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
+        <a class="navbar-brand" href="/customer_service">Customer_Service_Now</a>
       </span>
     </nav>
     <div class="col-2"></div>
@@ -51,25 +52,15 @@
                     <td><label for="form1" class="form-label">Loại khách hàng</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maLoaiKhach">
-                            <option selected id="form1" value="${customer.maLoaiKhach}">
-                                <h:if test="${customer.maLoaiKhach == 1}">
-                                    Diamond
-                                </h:if>
-                                <h:if test="${customer.maLoaiKhach == 2}">
-                                    Platinium
-                                </h:if>
-                                <h:if test="${customer.maLoaiKhach == 3}">
-                                    Gold
-                                </h:if>
-                                <h:if test="${customer.maLoaiKhach == 4}">
-                                    Silver
-                                </h:if>
-                                <h:if test="${customer.maLoaiKhach == 5}">
-                                    Member
-                                </h:if>
-                            </option>
                             <h:forEach items="${lkh.entrySet()}" var="lkh">
-                                <option value="${lkh.getKey()}">${lkh.getValue()}</option>
+                                <h:if test="${customer.maLoaiKhach == lkh.getKey()}">
+                                    <option selected id="form1" value="${lkh.getKey()}">${lkh.getValue()}</option>
+                                </h:if>
+                            </h:forEach>
+                            <h:forEach items="${lkh.entrySet()}" var="lkh">
+                                <h:if test="${customer.maLoaiKhach != lkh.getKey()}">
+                                    <option value="${lkh.getKey()}">${lkh.getValue()}</option>
+                                </h:if>
                             </h:forEach>
                         </select>
                     </td>
@@ -85,17 +76,18 @@
                 <tr>
                     <td><label for="form4" class="form-label">Giới tính</label></td>
                     <td>
-                        <select class="form-select" aria-label="Default select example" id="form4" name="gioiTinh">
-                            <option selected value="${customer.gioiTinh}">
-                                <h:if test="${customer.gioiTinh == 0}">
-                                    Nữ
-                                </h:if>
-                                <h:if test="${customer.gioiTinh == 1}">
-                                    Nam
-                                </h:if>
-                            </option>
-                            <option value="0">Nữ</option>
-                            <option value="1">Nam</option>
+                            <h:if test="${customer.gioiTinh == 1}">
+                                <select class="form-select" aria-label="Default select example" id="form4" name="gioiTinh">
+                                    <option selected value="1">Nam</option>
+                                    <option value="0">Nữ</option>
+                                </select>
+                            </h:if>
+                            <h:if test="${customer.gioiTinh == 0}">
+                                <select class="form-select" aria-label="Default select example" id="form4" name="gioiTinh">
+                                    <option selected value="0">Nam</option>
+                                    <option value="1">Nữ</option>
+                                </select>
+                            </h:if>
                         </select>
                     </td>
                 </tr>

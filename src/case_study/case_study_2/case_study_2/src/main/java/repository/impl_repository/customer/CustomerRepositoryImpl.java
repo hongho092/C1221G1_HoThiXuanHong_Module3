@@ -1,7 +1,9 @@
-package repository.impl_repository;
+package repository.impl_repository.customer;
 
-import model.Customer;
+import dto.CustomerServiceNow;
+import model.customer.Customer;
 import repository.BaseRepository;
+import repository.interface_repository.customer.CustomerRepository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,16 +11,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CustomerRepositoryImpl implements repository.interface_repository.CustomerRepository {
+public class CustomerRepositoryImpl implements CustomerRepository {
 
     private BaseRepository baseRepository = new BaseRepository();
 
     private static final String SELECT_CUSTOMER = "select * from khach_hang";
     private static final String CREATE_CUSTOMER = "insert into khach_hang(ma_loai_khach, ho_ten, ngay_sinh, gioi_tinh, so_cmnd, so_dien_thoai, email, dia_chi) value (?, ?, ?, ?, ?, ?, ?, ?);";
     private static final String FIND_CUSTOMER = "select * from khach_hang where ma_khach_hang = ?;";
-    private static final String EDIT_CUSTOMER = "update khach_hang set ho_ten=?, ngay_sinh=?, gioi_tinh=?, so_cmnd=?, so_dien_thoai=?, email=?, dia_chi=? where ma_khach_hang=?;";
+    private static final String EDIT_CUSTOMER = "update khach_hang set ma_loai_khach=?, ho_ten=?, ngay_sinh=?, gioi_tinh=?, so_cmnd=?, so_dien_thoai=?, email=?, dia_chi=? where ma_khach_hang=?;";
     private static final String DELETE_CUSTOMER = "call deleteCustomer(?);";
-    private static final String TYPE_CUSTOMER = "select * from loai_khach_hang;";
     private static final String SEARCH_CUSTOMER = "select * from khach_hang where ho_ten like ?;";
 
 
@@ -121,14 +122,15 @@ public class CustomerRepositoryImpl implements repository.interface_repository.C
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(EDIT_CUSTOMER);
-            preparedStatement.setString(1, customer.getHoTen());
-            preparedStatement.setString(2, customer.getNgaySinh());
-            preparedStatement.setInt(3, customer.getGioiTinh());
-            preparedStatement.setString(4, customer.getSoCMND());
-            preparedStatement.setString(5, customer.getSoDienThoai());
-            preparedStatement.setString(6, customer.getEmail());
-            preparedStatement.setString(7, customer.getDiaChi());
-            preparedStatement.setInt(8, customer.getMaKhachHang());
+            preparedStatement.setInt(1, customer.getMaLoaiKhach());
+            preparedStatement.setString(2, customer.getHoTen());
+            preparedStatement.setString(3, customer.getNgaySinh());
+            preparedStatement.setInt(4, customer.getGioiTinh());
+            preparedStatement.setString(5, customer.getSoCMND());
+            preparedStatement.setString(6, customer.getSoDienThoai());
+            preparedStatement.setString(7, customer.getEmail());
+            preparedStatement.setString(8, customer.getDiaChi());
+            preparedStatement.setInt(9, customer.getMaKhachHang());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -161,31 +163,6 @@ public class CustomerRepositoryImpl implements repository.interface_repository.C
     }
 
     @Override
-    public Map<Integer, String> getMaLoaiKhach() {
-        Map<Integer, String> loaiKhachHang = new HashMap<>();
-        Connection connection = baseRepository.getConnection();
-        PreparedStatement preparedStatement = null;
-        try {
-            preparedStatement = connection.prepareStatement(TYPE_CUSTOMER);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                int mlk = resultSet.getInt("ma_loai_khach");
-                String tlk = resultSet.getString("ten_loai_khach");
-                loaiKhachHang.put(mlk, tlk);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                preparedStatement.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return loaiKhachHang;
-    }
-
-    @Override
     public List<Customer> getCustomerByName(String name) {
         List<Customer> customers = new ArrayList<>();
         try {
@@ -210,5 +187,38 @@ public class CustomerRepositoryImpl implements repository.interface_repository.C
             e.printStackTrace();
         }
         return customers;
+    }
+
+    @Override
+    public List<CustomerServiceNow> getListCSN() {
+        List<CustomerServiceNow> customerServiceNows = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        String query = "select hop_dong.ma_hop_dong, khach_hang.ho_ten, dich_vu.ten_dich_vu, dich_vu.mo_ta_tien_nghi_khac, dich_vu.chi_phi_thue, \n" +
+                       "dich_vu_di_kem.ten_dich_vu_di_kem, hop_dong_chi_tiet.so_luong\n" +
+                       "from khach_hang\n" +
+                       "inner join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang\n" +
+                       "inner join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu\n" +
+                       "left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong\n" +
+                       "left join dich_vu_di_kem on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem\n" +
+                       "where now() between hop_dong.ngay_lam_hop_dong and hop_dong.ngay_ket_thuc; \n";
+        try {
+            preparedStatement = baseRepository.getConnection().prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            CustomerServiceNow customerServiceNow;
+            while (resultSet.next()) {
+                customerServiceNow = new CustomerServiceNow();
+                customerServiceNow.setMaHopDong(resultSet.getInt("ma_hop_dong"));
+                customerServiceNow.setHoTen(resultSet.getString("ho_ten"));
+                customerServiceNow.setTenDichVu(resultSet.getString("ten_dich_vu"));
+                customerServiceNow.setMoTaTienNghiKhac(resultSet.getString("mo_ta_tien_nghi_khac"));
+                customerServiceNow.setChiPhiThue(resultSet.getInt("chi_phi_thue"));
+                customerServiceNow.setTenDichVuDiKem(resultSet.getString("ten_dich_vu_di_kem"));
+                customerServiceNow.setSoLuong(resultSet.getInt("so_luong"));
+                customerServiceNows.add(customerServiceNow);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return customerServiceNows;
     }
 }

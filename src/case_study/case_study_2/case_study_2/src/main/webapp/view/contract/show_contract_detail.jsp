@@ -31,6 +31,7 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
+        <a class="navbar-brand" href="/customer_service">Customer_Service_Now</a>
       </span>
     </nav>
     <div class="col-2"></div>
@@ -45,7 +46,7 @@
             <th>STT</th>
             <th>Mã hợp đồng chi tiết</th>
             <th>Mã hợp đồng</th>
-            <th>Mã dịch vụ đi kèm</th>
+            <th>Tên dịch vụ đi kèm</th>
             <th>Số lượng</th>
         </tr>
         </thead>
@@ -55,9 +56,14 @@
                 <td>${hong.count}</td>
                 <td>${cd.maHopDongChiTiet}</td>
                 <td>${cd.maHopDong}</td>
-                <td>${cd.maDichVuDiKem}</td>
+                <td>
+                    <h:forEach items="${hdct.entrySet()}" var="entry">
+                        <h:if test="${cd.maDichVuDiKem == entry.getKey()}">
+                            ${entry.getValue()}
+                        </h:if>
+                    </h:forEach>
+                </td>
                 <td>${cd.soLuong}</td>
-
             </tr>
         </h:forEach>
         </tbody>

@@ -14,11 +14,13 @@ public interface EmployeeService {
 
     Map<Integer, String> getBP();
 
-    void createEmployee(Employee employee);
+    Map<String, String> createEmployee(Employee employee);
 
     Employee findEmployeeById(int id);
 
     void editEmployee(Employee employee);
 
     void deleteEmployee(int id);
+
+    List<Employee> getEmployeeList(String name, String address, int mvt);
 }

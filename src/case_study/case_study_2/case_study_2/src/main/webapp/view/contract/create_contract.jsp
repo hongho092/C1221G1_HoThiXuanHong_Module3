@@ -30,6 +30,7 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
+        <a class="navbar-brand" href="/customer_service">Customer_Service_Now</a>
       </span>
     </nav>
     <div class="col-2"></div>
@@ -44,51 +45,59 @@
                 <tr>
                     <th>Thông tin</th>
                     <th>Chi tiết</th>
+                    <th>Lưu ý</th>
                 </tr>
                 <tr>
                     <td><label for="form1" class="form-label">Ngày làm hợp đồng</label></td>
                     <td><input type="datetime-local" class="form-control" id="form1" name="ngayLamHopDong"></td>
+                    <td><p class="text-danger">${error.get("ngayLamHopDong")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form2" class="form-label">Ngày kết thúc</label></td>
                     <td><input type="datetime-local" class="form-control" id="form2" name="ngayKetThuc"></td>
+                    <td><p class="text-danger">${error.get("ngayKetThuc")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form3" class="form-label">Tiền đặt cọc</label></td>
-                    <td><input type="number" class="form-control" id="form3" name="tienDatCoc"></td>
+                    <td><input type="number" class="form-control" id="form3" name="tienDatCoc" value="0"></td>
+                    <td><p class="text-danger">${error.get("tienDatCoc")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form4" class="form-label">Nhân viên tạo hợp đồng</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maNhanVien" id="form4">
-                            <option selected>--Nhấn vào để chọn--</option>
+                            <option selected value="0">--Nhấn vào để chọn--</option>
                             <h:forEach items="${nvhd.entrySet()}" var="entry">
                                 <option value="${entry.getKey()}">${entry.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("maNhanVien")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form5" class="form-label">Khách hàng được tạo hợp đồng</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maKhachHang" id="form5">
-                            <option selected>--Nhấn vào để chọn--</option>
+                            <option selected value="0">--Nhấn vào để chọn--</option>
                             <h:forEach items="${khhd.entrySet()}" var="entry">
                                 <option value="${entry.getKey()}">${entry.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("maKhachHang")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form6" class="form-label">Chọn dịch vụ</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maDichVu" id="form6">
-                            <option selected>--Nhấn vào để chọn--</option>
+                            <option selected value="0">--Nhấn vào để chọn--</option>
                             <h:forEach items="${dv.entrySet()}" var="entry">
                                 <option value="${entry.getKey()}">${entry.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("maDichVu")}</p></td>
+
                 </tr>
             </table>
             <button type="submit" class="btn btn-primary">Tạo hợp đồng</button>

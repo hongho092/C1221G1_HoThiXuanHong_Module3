@@ -21,4 +21,6 @@ public interface EmployeeRepository {
     void editEmployee(Employee employee);
 
     void deleteEmployee(int id);
+
+    List<Employee> getEmployeeList(String name, String address, int mavt);
 }

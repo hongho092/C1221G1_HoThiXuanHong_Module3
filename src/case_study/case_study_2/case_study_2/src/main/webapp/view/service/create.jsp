@@ -44,60 +44,78 @@
                 <tr>
                     <th>Thông tin</th>
                     <th>Chi tiết</th>
+                    <th>Lưu ý</th>
                 </tr>
                 <tr>
                     <td><label for="form1" class="form-label">Tên dịch vụ</label></td>
                     <td><input type="text" class="form-control" id="form1" name="tenDichVu"></td>
+                    <td><p class="text-danger">${error.get("tenDichVu")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form2" class="form-label">Diện tích</label></td>
-                    <td><input type="number" class="form-control" id="form2" name="dienTich"></td>
+                    <td><input type="number" class="form-control" id="form2" name="dienTich" value="0"></td>
+                    <td><p class="text-danger">${error.get("dienTich")}</p></td>
+
                 </tr>
                 <tr>
                     <td><label for="form3" class="form-label">Chi phí thuê</label></td>
-                    <td><input type="number" class="form-control" id="form3" name="chiPhiThue"></td>
+                    <td><input type="number" value="0" class="form-control" id="form3" name="chiPhiThue"></td>
+                    <td><p class="text-danger">${error.get("chiPhiThue")}</p></td>
+
                 </tr>
                 <tr>
                     <td><label for="form7" class="form-label">Số người tối đa</label></td>
-                    <td><input type="number" class="form-control" id="form7" name="soNguoiToiDa"></td>
+                    <td><input type="number" value="0" class="form-control" id="form7" name="soNguoiToiDa"></td>
+                    <td><p class="text-danger">${error.get("soNguoiToiDa")}</p></td>
+
                 </tr>
                 <tr>
                     <td><label for="form4" class="form-label">Kiểu thuê</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maKieuThue" id="form4">
-                            <option selected>--Nhấn vào để chọn--</option>
+                            <option selected value="0">--Nhấn vào để chọn--</option>
                             <h:forEach items="${kt.entrySet()}" var="entry">
                                 <option value="${entry.getKey()}">${entry.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("maKieuThue")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form5" class="form-label">Loại dịch vụ</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maLoaiDichVu" id="form5">
-                            <option selected>--Nhấn vào để chọn--</option>
+                            <option selected value="0">--Nhấn vào để chọn--</option>
                             <h:forEach items="${ldv.entrySet()}" var="entry">
                                 <option value="${entry.getKey()}">${entry.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("maLoaiDichVu")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form6" class="form-label">Tiêu chuẩn phòng</label></td>
                     <td><input type="text" class="form-control" id="form6" name="tieuChuanPhong"></td>
+                    <td><p class="text-danger">${error.get("tieuChuanPhong")}</p></td>
+
                 </tr>
                 <tr>
                     <td><label for="form8" class="form-label">Tiện ích khác</label></td>
                     <td><input type="text" class="form-control" id="form8" name="moTaTienNghiKhac"></td>
+                    <td><p class="text-danger">${error.get("moTaTienNghiKhac")}</p></td>
+
                 </tr>
                 <tr>
                     <td><label for="form9" class="form-label">Diện tích hồ bơi</label></td>
-                    <td><input type="number" class="form-control" id="form9" name="dienTichHoBoi"></td>
+                    <td><input type="number" class="form-control" id="form9" name="dienTichHoBoi" value="0"></td>
+                    <td><p class="text-danger">${error.get("dienTichHoBoi")}</p></td>
+
                 </tr>
                 <tr>
                     <td><label for="form10" class="form-label">Số tầng</label></td>
-                    <td><input type="number" class="form-control" id="form10" name="soTang"></td>
+                    <td><input type="number" class="form-control" id="form10" name="soTang" value="0"></td>
+                    <td><p class="text-danger">${error.get("soTang")}</p></td>
+
                 </tr>
             </table>
             <button type="submit" class="btn btn-primary">Tạo dịch vụ</button>

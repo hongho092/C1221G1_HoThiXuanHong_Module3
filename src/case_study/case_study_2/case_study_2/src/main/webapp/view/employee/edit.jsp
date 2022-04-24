@@ -29,6 +29,7 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
+         <a class="navbar-brand" href="/customer_service">Customer_Service_Now</a>
       </span>
     </nav>
     <div class="col-2"></div>
@@ -79,40 +80,32 @@
                     <td><label for="form4" class="form-label">Vị trí</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maViTri">
-                            <option selected id="form4" value="${employee.maViTri}">
-                                <h:if test="${employee.maViTri == 1}">
-                                    Quản lý
+                            <h:forEach items="${vt.entrySet()}" var="td">
+                                <h:if test="${employee.maViTri == td.getKey()}">
+                                    <option selected id="form4" value="${td.getKey()}">${td.getValue()}</option>
                                 </h:if>
-                                <h:if test="${employee.maViTri == 2}">
-                                    Nhân viên
+                            </h:forEach>
+                            <h:forEach items="${vt.entrySet()}" var="td">
+                                <h:if test="${employee.maViTri != td.getKey()}">
+                                    <option value="${td.getKey()}">${td.getValue()}</option>
                                 </h:if>
-                            </option>
-                            <h:forEach items="${vt.entrySet()}" var="entry">
-                                <option value="${entry.getKey()}">${entry.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="form4" class="form-label">Trình độ</label></td>
+                    <td><label for="form10" class="form-label">Trình độ</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maTrinhDo">
-                            <option selected id="form4" value="${employee.maTrinhDo}">
-                                <h:if test="${employee.maTrinhDo == 1}">
-                                    Trung Cấp
+                            <h:forEach items="${td.entrySet()}" var="td">
+                                <h:if test="${employee.maTrinhDo == td.getKey()}">
+                                    <option selected id="form10" value="${td.getKey()}">${td.getValue()}</option>
                                 </h:if>
-                                <h:if test="${employee.maTrinhDo == 2}">
-                                    Cao Đẳng
+                            </h:forEach>
+                            <h:forEach items="${td.entrySet()}" var="td">
+                                <h:if test="${employee.maTrinhDo != td.getKey()}">
+                                    <option value="${td.getKey()}">${td.getValue()}</option>
                                 </h:if>
-                                <h:if test="${employee.maTrinhDo == 3}">
-                                    Đại học
-                                </h:if>
-                                <h:if test="${employee.maTrinhDo == 4}">
-                                    Sau Đại Học
-                                </h:if>
-                            </option>
-                            <h:forEach items="${td.entrySet()}" var="entry">
-                                <option value="${entry.getKey()}">${entry.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
@@ -121,22 +114,15 @@
                     <td><label for="form4" class="form-label">Bộ phận</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maBoPhan">
-                            <option selected id="form4" value="${employee.maBoPhan}">
-                                <h:if test="${employee.maBoPhan == 1}">
-                                    Sale Marketing
+                            <h:forEach items="${bp.entrySet()}" var="td">
+                                <h:if test="${employee.maBoPhan == td.getKey()}">
+                                    <option selected id="form4" value="${td.getKey()}">${td.getValue()}</option>
                                 </h:if>
-                                <h:if test="${employee.maBoPhan == 2}">
-                                    Hành Chính
+                            </h:forEach>
+                            <h:forEach items="${bp.entrySet()}" var="td">
+                                <h:if test="${employee.maBoPhan != td.getKey()}">
+                                    <option value="${td.getKey()}">${td.getValue()}</option>
                                 </h:if>
-                                <h:if test="${employee.maBoPhan == 3}">
-                                    Phục Vụ
-                                </h:if>
-                                <h:if test="${employee.maBoPhan == 4}">
-                                    Quản Lý
-                                </h:if>
-                            </option>
-                            <h:forEach items="${bp.entrySet()}" var="entry">
-                                <option value="${entry.getKey()}">${entry.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>

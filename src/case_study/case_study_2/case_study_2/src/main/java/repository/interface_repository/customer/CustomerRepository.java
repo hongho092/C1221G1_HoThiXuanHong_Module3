@@ -1,6 +1,7 @@
-package repository.interface_repository;
+package repository.interface_repository.customer;
 
-import model.Customer;
+import dto.CustomerServiceNow;
+import model.customer.Customer;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,9 @@ public interface CustomerRepository {
 
     void deleteCustomer(int id);
 
-    Map<Integer, String> getMaLoaiKhach();
+//    Map<Integer, String> getMaLoaiKhach();
 
     List<Customer> getCustomerByName(String name);
+
+    List<CustomerServiceNow> getListCSN();
 }

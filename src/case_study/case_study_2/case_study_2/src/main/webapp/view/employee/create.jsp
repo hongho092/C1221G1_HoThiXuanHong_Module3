@@ -29,6 +29,7 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
+      <a class="navbar-brand" href="/customer_service">Customer_Service_Now</a>
       </span>
     </nav>
     <div class="col-2"></div>
@@ -42,67 +43,78 @@
                 <tr>
                     <th>Thông tin</th>
                     <th>Chi tiết</th>
+                    <th>Lưu ý</th>
                 </tr>
                 <tr>
                     <td><label for="form1" class="form-label">Họ tên</label></td>
-                    <td><input type="text" class="form-control" id="form1" name="hoTen"></td>
+                    <td><input type="text" class="form-control" id="form1" name="hoTen" value="${hoTen}"></td>
+                    <td><p class="text-danger">${error.get("hoTen")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form3" class="form-label">Ngày sinh</label></td>
-                    <td><input type="date" class="form-control" id="form3" name="ngaySinh"></td>
+                    <td><input type="date" class="form-control" id="form3" name="ngaySinh" value="${ngaySinh}"></td>
+                    <td><p class="text-danger">${error.get("ngaySinh")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form5" class="form-label">Số CMND</label></td>
-                    <td><input type="text" class="form-control col" id="form5" name="soCMND"></td>
+                    <td><input type="text" class="form-control col" id="form5" name="soCMND" value="${soCMND}"></td>
+                    <td><p class="text-danger">${error.get("soCMND")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form4" class="form-label">Lương</label></td>
-                    <td><input type="text" class="form-control col" id="form4" name="luong"></td>
+                    <td><input type="number" class="form-control col" id="form4" name="luong" value="${luong}"></td>
+                    <td><p class="text-danger">${error.get("luong")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form6" class="form-label">Số điện thoại</label></td>
-                    <td><input type="text" class="form-control col" id="form6" name="soDienThoai"></td>
+                    <td><input type="text" class="form-control col" id="form6" name="soDienThoai" value="${soDienThoai}"></td>
+                    <td><p class="text-danger">${error.get("soDienThoai")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form7" class="form-label">Email</label></td>
-                    <td><input type="text" class="form-control col" id="form7" name="email"></td>
+                    <td><input type="text" class="form-control col" id="form7" name="email" value="${email}"></td>
+                    <td><p class="text-danger">${error.get("email")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form8" class="form-label">Địa chỉ</label></td>
-                    <td><input type="text" class="form-control col" id="form8" name="diaChi"></td>
+                    <td><input type="text" class="form-control col" id="form8" name="diaChi" value="${diaChi}"></td>
+                    <td><p class="text-danger">${error.get("diaChi")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form2" class="form-label">Vị trí</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maViTri">
-                            <option selected id="form2">--Nhấn vào để chọn--</option>
+                            <option selected id="form2" value="0">--Nhấn vào để chọn--</option>
                             <h:forEach items="${vt.entrySet()}" var="vt">
                                 <option value="${vt.getKey()}">${vt.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("maViTri")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form2" class="form-label">Trình độ</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maTrinhDo">
-                            <option selected id="form2">--Nhấn vào để chọn--</option>
+                            <option selected id="form2" value="0" >--Nhấn vào để chọn--</option>
                             <h:forEach items="${td.entrySet()}" var="td">
                                 <option value="${td.getKey()}">${td.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("maTrinhDo")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form2" class="form-label">Bộ phận</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maBoPhan">
-                            <option selected id="form2">--Nhấn vào để chọn--</option>
+                            <option selected id="form2" value="0">--Nhấn vào để chọn--</option>
                             <h:forEach items="${bp.entrySet()}" var="bp">
                                 <option value="${bp.getKey()}">${bp.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("maBoPhan")}</p></td>
                 </tr>
             </table>
             <button type="submit" class="btn btn-primary">Tạo nhân viên</button>

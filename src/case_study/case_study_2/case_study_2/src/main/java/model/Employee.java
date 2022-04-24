@@ -5,7 +5,7 @@ public class Employee {
     private String hoTen;
     private String ngaySinh;
     private String soCMND;
-    private double luong;
+    private String luong;
     private String soDienThoai;
     private String email;
     private String diaChi;
@@ -13,7 +13,7 @@ public class Employee {
     private int maTrinhDo;
     private int maBoPhan;
 
-    public Employee(int maNhanVien, String hoTen, String ngaySinh, String soCMND, double luong, String soDienThoai, String email, String diaChi, int maViTri, int maTrinhDo, int maBoPhan) {
+    public Employee(int maNhanVien, String hoTen, String ngaySinh, String soCMND, String luong, String soDienThoai, String email, String diaChi, int maViTri, int maTrinhDo, int maBoPhan) {
         this.maNhanVien = maNhanVien;
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
@@ -62,11 +62,11 @@ public class Employee {
         this.soCMND = soCMND;
     }
 
-    public double getLuong() {
+    public String getLuong() {
         return luong;
     }
 
-    public void setLuong(double luong) {
+    public void setLuong(String luong) {
         this.luong = luong;
     }
 

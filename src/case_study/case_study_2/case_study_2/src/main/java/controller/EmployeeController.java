@@ -1,6 +1,5 @@
 package controller;
 
-import model.Customer;
 import model.Employee;
 import service.impl_service.EmployeeServiceImpl;
 import service.interface_service.EmployeeService;
@@ -44,22 +43,40 @@ public class EmployeeController extends HttpServlet {
                 break;
             }
             case "search": {
-                System.out.println("search");
-//                String name = request.getParameter("name");
-//                List<Customer> customers = iCustomerService.getCustomerByName(name);
-//                request.setAttribute("customers", customers);
-//                try {
-//                    request.getRequestDispatcher("view/customer/show.jsp").forward(request, response);
-//                } catch (ServletException e) {
-//                    e.printStackTrace();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//                break;
+                searchEmployee(request, response);
+                break;
             }
             default: {
                 goToList1(request, response);
             }
+        }
+    }
+
+    private void searchEmployee(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        String address = request.getParameter("address");
+        int maViTri = Integer.parseInt(request.getParameter("maViTri"));
+        if (name == "") {
+            name = null;
+        }
+        if (address == "") {
+            address = null;
+        }
+        List<Employee> employees = employeeService.getEmployeeList(name, address, maViTri);
+        request.setAttribute("employees", employees);
+        Map<Integer, String> viTri = employeeService.getVT();
+        Map<Integer, String> trinhDo = employeeService.getTD();
+        Map<Integer, String> boPhan = employeeService.getBP();
+        request.setAttribute("vt", viTri);
+        request.setAttribute("td", trinhDo);
+        request.setAttribute("bp", boPhan);
+        request.setAttribute("show", "Kết quả tìm kiếm được");
+        try {
+            request.getRequestDispatcher("view/employee/show.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -82,7 +99,6 @@ public class EmployeeController extends HttpServlet {
     private void findEmployeeById(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Employee employee = employeeService.findEmployeeById(id);
-        System.out.println(employee.getHoTen());
         request.setAttribute("employee", employee);
         Map<Integer, String> viTri = employeeService.getVT();
         Map<Integer, String> trinhDo = employeeService.getTD();
@@ -122,7 +138,6 @@ public class EmployeeController extends HttpServlet {
         employeeService.deleteEmployee(id);
         request.setAttribute("show", "Xóa nhân viên thành công");
         goToList1(request, response);
-//        }
     }
 
     @Override
@@ -154,7 +169,7 @@ public class EmployeeController extends HttpServlet {
         employee.setHoTen(request.getParameter("hoTen"));
         employee.setNgaySinh(request.getParameter("ngaySinh"));
         employee.setSoCMND(request.getParameter("soCMND"));
-        employee.setLuong(Double.parseDouble(request.getParameter("luong")));
+        employee.setLuong(request.getParameter("luong"));
         employee.setSoDienThoai(request.getParameter("soDienThoai"));
         employee.setEmail(request.getParameter("email"));
         employee.setDiaChi(request.getParameter("diaChi"));
@@ -162,7 +177,6 @@ public class EmployeeController extends HttpServlet {
         employee.setMaTrinhDo(Integer.parseInt(request.getParameter("maTrinhDo")));
         employee.setMaBoPhan(Integer.parseInt(request.getParameter("maBoPhan")));
         employeeService.editEmployee(employee);
-        System.out.println(employee.getHoTen());
         request.setAttribute("show", "Sửa thông tin nhân viên thành công");
         goToList1(request, response);
     }
@@ -172,15 +186,33 @@ public class EmployeeController extends HttpServlet {
         employee.setHoTen(request.getParameter("hoTen"));
         employee.setNgaySinh(request.getParameter("ngaySinh"));
         employee.setSoCMND(request.getParameter("soCMND"));
-        employee.setLuong(Integer.parseInt(request.getParameter("luong")));
+        employee.setLuong(request.getParameter("luong"));
         employee.setSoDienThoai(request.getParameter("soDienThoai"));
         employee.setEmail(request.getParameter("email"));
         employee.setDiaChi(request.getParameter("diaChi"));
         employee.setMaViTri(Integer.parseInt(request.getParameter("maViTri")));
         employee.setMaTrinhDo(Integer.parseInt(request.getParameter("maTrinhDo")));
         employee.setMaBoPhan(Integer.parseInt(request.getParameter("maBoPhan")));
-        employeeService.createEmployee(employee);
-        request.setAttribute("show", "Tạo mới nhân viên thành công");
-        goToList1(request, response);
+        Map<String, String> map = employeeService.createEmployee(employee);
+        if (map.isEmpty()) {
+            request.setAttribute("show", "Tạo mới nhân viên thành công");
+            goToList1(request, response);
+        } else {
+            request.setAttribute("error", map);
+            request.setAttribute("hoTen", employee.getHoTen());
+            request.setAttribute("ngaySinh", employee.getNgaySinh());
+            request.setAttribute("luong", employee.getLuong());
+            request.setAttribute("soCMND", employee.getSoCMND());
+            request.setAttribute("soDienThoai", employee.getSoDienThoai());
+            request.setAttribute("email", employee.getEmail());
+            request.setAttribute("diaChi", employee.getDiaChi());
+            try {
+                request.getRequestDispatcher("view/employee/create.jsp").forward(request, response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

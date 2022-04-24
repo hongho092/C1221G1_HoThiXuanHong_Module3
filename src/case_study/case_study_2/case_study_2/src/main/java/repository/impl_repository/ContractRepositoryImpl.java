@@ -175,7 +175,6 @@ public class ContractRepositoryImpl implements ContractRepository {
                 String tnv = resultSet.getString("ho_ten");
                 nhanVienHD.put(mnv, tnv);
             }
-            System.out.println(nhanVienHD);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

@@ -21,7 +21,8 @@
     <div class="col-10 text-end mt-3 mb-3"><h3 class="text-danger">Ho Thi Xuan Hong</h3></div>
 </div>
 <div class="row sticky-top mt-2 bg bg-light">
-    <nav class="navbar navbar-light bg-light">
+    <div class="col-2"></div>
+    <nav class="navbar navbar-light bg-light col-8">
       <span class="container-fluid">
         <a class="navbar-brand" href="index.jsp">Home</a>
         <a class="navbar-brand" href="/employee">Employee</a>
@@ -35,12 +36,10 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
-        <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <a class="navbar-brand" href="/customer_service">Customer_Service_Now</a>
       </span>
     </nav>
+    <div class="col-2"></div>
 </div>
 <div class="row border border-1">
     <div class="col-2"></div>
@@ -52,32 +51,36 @@
                 <tr>
                     <th>Thông tin</th>
                     <th>Chi tiết</th>
+                    <th>Lưu ý</th>
                 </tr>
                 <tr>
                     <td><label for="form1" class="form-label">Mã hợp đồng</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maHopDong" id="form1">
-                            <option selected>--Nhấn vào để chọn--</option>
+                            <option selected value="0">--Nhấn vào để chọn--</option>
                             <h:forEach items="${mhd}" var="mhd">
                                 <option value="${mhd}">${mhd}</option>
                             </h:forEach>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("maHopDong")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form2" class="form-label">Mã dịch vụ đi kèm</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maDichVuDiKem" id="form2">
-                            <option selected>--Nhấn vào để chọn--</option>
+                            <option selected value="0">--Nhấn vào để chọn--</option>
                             <h:forEach items="${hdct.entrySet()}" var="entry">
                                 <option value="${entry.getKey()}">${entry.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("maDichVuDiKem")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form3" class="form-label">Số lượng</label></td>
-                    <td><input type="int" class="form-control" id="form3" name="soLuong"></td>
+                    <td><input type="int" class="form-control" id="form3" name="soLuong" value="0"></td>
+                    <td><p class="text-danger">${error.get("soLuong")}</p></td>
                 </tr>
             </table>
             <button type="submit" class="btn btn-primary">Tạo hợp đồng chi tiết</button>

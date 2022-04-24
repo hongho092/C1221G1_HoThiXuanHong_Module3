@@ -29,6 +29,7 @@
             <li><a class="dropdown-item" href="/serviceAllController?action=showContractDetail">Contract Detail</a></li>
           </ul>
         </div>
+        <a class="navbar-brand" href="/customer_service">Customer_Service_Now</a>
       </span>
     </nav>
     <div class="col-2"></div>
@@ -42,51 +43,60 @@
                 <tr>
                     <th>Thông tin</th>
                     <th>Chi tiết</th>
+                    <th>Lưu ý</th>
                 </tr>
                 <tr>
                     <td><label for="form1" class="form-label">Loại khách hàng</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" name="maLoaiKhach">
-                            <option selected id="form1">--Nhấn vào để chọn--</option>
+                            <option selected id="form1" value="0">--Nhấn vào để chọn--</option>
                             <h:forEach items="${lkh.entrySet()}" var="lkh">
                                 <option value="${lkh.getKey()}">${lkh.getValue()}</option>
                             </h:forEach>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("maLoaiKhach")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form2" class="form-label">Họ tên</label></td>
                     <td><input type="text" class="form-control" id="form2" name="hoTen"></td>
+                    <td><p class="text-danger">${error.get("hoTen")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form3" class="form-label">Ngày sinh</label></td>
                     <td><input type="date" class="form-control" id="form3" name="ngaySinh"></td>
+                    <td><p class="text-danger">${error.get("ngaySinh")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form4" class="form-label">Giới tính</label></td>
                     <td>
                         <select class="form-select" aria-label="Default select example" id="form4" name="gioiTinh">--%>
-                            <option selected>--Nhấn vào để chọn--</option>
+                            <option selected value="2">--Nhấn vào để chọn--</option>
                             <option value="0">Nữ</option>
                             <option value="1">Nam</option>
                         </select>
                     </td>
+                    <td><p class="text-danger">${error.get("gioiTinh")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form5" class="form-label">Số CMND</label></td>
                     <td><input type="text" class="form-control col" id="form5" name="soCMND"></td>
+                    <td><p class="text-danger">${error.get("soCMND")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form6" class="form-label">Số điện thoại</label></td>
                     <td><input type="text" class="form-control col" id="form6" name="soDienThoai"></td>
+                    <td><p class="text-danger">${error.get("soDienThoai")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form7" class="form-label">Email</label></td>
                     <td><input type="text" class="form-control col" id="form7" name="email"></td>
+                    <td><p class="text-danger">${error.get("email")}</p></td>
                 </tr>
                 <tr>
                     <td><label for="form8" class="form-label">Địa chỉ</label></td>
                     <td><input type="text" class="form-control col" id="form8" name="diaChi"></td>
+                    <td><p class="text-danger">${error.get("diaChi")}</p></td>
                 </tr>
             </table>
             <button type="submit" class="btn btn-primary">Tạo khách hàng</button>

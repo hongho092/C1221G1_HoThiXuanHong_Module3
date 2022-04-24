@@ -1,6 +1,5 @@
 package repository.impl_repository;
 
-import model.Customer;
 import model.Employee;
 import repository.BaseRepository;
 import repository.interface_repository.EmployeeRepository;
@@ -29,7 +28,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
                 employee.setHoTen(resultSet.getString("ho_ten"));
                 employee.setNgaySinh(resultSet.getString("ngay_sinh"));
                 employee.setSoCMND(resultSet.getString("so_cmnd"));
-                employee.setLuong(resultSet.getInt("luong"));
+                employee.setLuong(resultSet.getString("luong"));
                 employee.setSoDienThoai(resultSet.getString("so_dien_thoai"));
                 employee.setEmail(resultSet.getString("email"));
                 employee.setDiaChi(resultSet.getString("dia_chi"));
@@ -115,7 +114,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
             preparedStatement.setString(1, employee.getHoTen());
             preparedStatement.setString(2, employee.getNgaySinh());
             preparedStatement.setString(3, employee.getSoCMND());
-            preparedStatement.setInt(4, (int) employee.getLuong());
+            preparedStatement.setString(4, employee.getLuong());
             preparedStatement.setString(5, employee.getSoDienThoai());
             preparedStatement.setString(6, employee.getEmail());
             preparedStatement.setString(7, employee.getDiaChi());
@@ -150,7 +149,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
                 employee.setHoTen(resultSet.getString("ho_ten"));
                 employee.setNgaySinh(resultSet.getString("ngay_sinh"));
                 employee.setSoCMND(resultSet.getString("so_cmnd"));
-                employee.setLuong(resultSet.getInt("luong"));
+                employee.setLuong(resultSet.getString("luong"));
                 employee.setSoDienThoai(resultSet.getString("so_dien_thoai"));
                 employee.setEmail(resultSet.getString("email"));
                 employee.setDiaChi(resultSet.getString("dia_chi"));
@@ -180,7 +179,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
             preparedStatement.setString(1, employee.getHoTen());
             preparedStatement.setString(2, employee.getNgaySinh());
             preparedStatement.setString(3, employee.getSoCMND());
-            preparedStatement.setInt(4, (int) employee.getLuong());
+            preparedStatement.setString(4, employee.getLuong());
             preparedStatement.setString(5, employee.getSoDienThoai());
             preparedStatement.setString(6, employee.getEmail());
             preparedStatement.setString(7, employee.getDiaChi());
@@ -219,5 +218,45 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public List<Employee> getEmployeeList(String name, String address, int mvt) {
+        List<Employee> employees = new ArrayList<>();
+        Connection connection = baseRepository.getConnection();
+        PreparedStatement preparedStatement = null;
+        String query = "select * from nhan_vien where (ho_ten like ?) or (dia_chi like ?) or (ma_vi_tri = ?);";
+        Employee employee;
+        try {
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, "%"+name+"%");
+            preparedStatement.setString(2, "%"+address+"%");
+            preparedStatement.setInt(3, mvt);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                employee = new Employee();
+                employee.setMaNhanVien(resultSet.getInt("ma_nhan_vien"));
+                employee.setHoTen(resultSet.getString("ho_ten"));
+                employee.setNgaySinh(resultSet.getString("ngay_sinh"));
+                employee.setSoCMND(resultSet.getString("so_cmnd"));
+                employee.setLuong(resultSet.getString("luong"));
+                employee.setSoDienThoai(resultSet.getString("so_dien_thoai"));
+                employee.setEmail(resultSet.getString("email"));
+                employee.setDiaChi(resultSet.getString("dia_chi"));
+                employee.setMaViTri(resultSet.getInt("ma_vi_tri"));
+                employee.setMaTrinhDo(resultSet.getInt("ma_trinh_do"));
+                employee.setMaBoPhan(resultSet.getInt("ma_bo_phan"));
+                employees.add(employee);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return employees;
     }
 }

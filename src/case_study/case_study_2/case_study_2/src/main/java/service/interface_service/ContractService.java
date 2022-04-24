@@ -2,7 +2,6 @@ package service.interface_service;
 
 import model.Contract;
 import model.ContractDetail;
-import model.Service;
 
 import java.util.List;
 import java.util.Map;
@@ -12,7 +11,7 @@ public interface ContractService {
 
     Map<Integer, String> getMaHopDongHDCT();
 
-    void createCD(ContractDetail contractDetail);
+    Map<String, String> createCD(ContractDetail contractDetail);
 
     List<ContractDetail> getListContractDetail();
 
@@ -24,5 +23,5 @@ public interface ContractService {
 
     Map<Integer, String> getDichVu();
 
-    void createCT(Contract contract);
+    Map<String, String> createCT(Contract contract);
 }

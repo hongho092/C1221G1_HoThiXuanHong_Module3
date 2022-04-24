@@ -1,12 +1,13 @@
-package service.interface_service;
+package service.interface_service.customer;
 
-import model.Customer;
+import dto.CustomerServiceNow;
+import model.customer.Customer;
 
 import java.util.List;
 import java.util.Map;
 
 public interface CustomerService {
-    void createCustomer(Customer customer);
+    Map<String, String> createCustomer(Customer customer);
 
     List<Customer> getList();
 
@@ -16,7 +17,9 @@ public interface CustomerService {
 
     void deleteCustomer(int id);
 
-    Map<Integer, String> getLoaiKhach();
+//    Map<Integer, String> getLoaiKhach();
 
     List<Customer> getCustomerByName(String name);
+
+    List<CustomerServiceNow> getListCSN();
 }

@@ -1,8 +1,10 @@
 package controller;
 
-import model.Customer;
-import service.impl_service.CustomerServiceImpl;
-import service.interface_service.CustomerService;
+import model.customer.Customer;
+import service.impl_service.customer.CustomerServiceImpl;
+import service.impl_service.customer.CustomerTypeServiceImpl;
+import service.interface_service.customer.CustomerService;
+import service.interface_service.customer.CustomerTypeService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -16,6 +18,7 @@ import java.util.Map;
 public class CustomerController extends HttpServlet {
 
     private CustomerService iCustomerService = new CustomerServiceImpl();
+    private CustomerTypeService customerTypeService = new CustomerTypeServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
@@ -56,7 +59,7 @@ public class CustomerController extends HttpServlet {
         String name = request.getParameter("name");
         List<Customer> customers = iCustomerService.getCustomerByName(name);
         request.setAttribute("customers", customers);
-        Map<Integer, String> maloaikhach = iCustomerService.getLoaiKhach();
+        Map<Integer, String> maloaikhach = customerTypeService.getCustomerType();
         request.setAttribute("lkh", maloaikhach);
         try {
             request.getRequestDispatcher("view/customer/show.jsp").forward(request, response);
@@ -70,7 +73,7 @@ public class CustomerController extends HttpServlet {
     private void goToList(HttpServletRequest request, HttpServletResponse response) {
         List<Customer> customers = iCustomerService.getList();
         request.setAttribute("customers", customers);
-        Map<Integer, String> maloaikhach = iCustomerService.getLoaiKhach();
+        Map<Integer, String> maloaikhach = customerTypeService.getCustomerType();
         request.setAttribute("lkh", maloaikhach);
         try {
             request.getRequestDispatcher("view/customer/show.jsp").forward(request, response);
@@ -82,7 +85,7 @@ public class CustomerController extends HttpServlet {
     }
 
     private void goToCreate(HttpServletRequest request, HttpServletResponse response) {
-        Map<Integer, String> maloaikhach = iCustomerService.getLoaiKhach();
+        Map<Integer, String> maloaikhach = customerTypeService.getCustomerType();
         request.setAttribute("lkh", maloaikhach);
         try {
             request.getRequestDispatcher("view/customer/create.jsp").forward(request, response);
@@ -97,7 +100,7 @@ public class CustomerController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Customer customer = iCustomerService.findCustomerById(id);
         request.setAttribute("customer", customer);
-        Map<Integer, String> maloaikhach = iCustomerService.getLoaiKhach();
+        Map<Integer, String> maloaikhach = customerTypeService.getCustomerType();
         request.setAttribute("lkh", maloaikhach);
         try {
             request.getRequestDispatcher("view/customer/edit.jsp").forward(request, response);
@@ -136,6 +139,7 @@ public class CustomerController extends HttpServlet {
 
     private void infoEditCustomer(HttpServletRequest request, HttpServletResponse response) {
         Customer customer = new Customer();
+        customer.setMaKhachHang(Integer.parseInt(request.getParameter("maKhachHang")));
         customer.setMaLoaiKhach(Integer.parseInt(request.getParameter("maLoaiKhach")));
         customer.setHoTen(request.getParameter("hoTen"));
         customer.setNgaySinh(request.getParameter("ngaySinh"));
@@ -159,8 +163,17 @@ public class CustomerController extends HttpServlet {
         customer.setSoDienThoai(request.getParameter("soDienThoai"));
         customer.setEmail(request.getParameter("email"));
         customer.setDiaChi(request.getParameter("diaChi"));
-        iCustomerService.createCustomer(customer);
-        request.setAttribute("show", "Tạo mới khách hàng thành công");
-        goToList(request, response);
+        Map<String, String> map = iCustomerService.createCustomer(customer);
+        if (map.isEmpty()) {
+            request.setAttribute("show", "Tạo mới khách hàng thành công");
+            goToList(request, response);
+        } else {
+            request.setAttribute("error", map);
+            goToCreate(request, response);
+        }
+//        Map<String, String> map = employeeService.createEmployee(employee);
+//        iCustomerService.createCustomer(customer);
+//        request.setAttribute("show", "Tạo mới khách hàng thành công");
+//        goToList(request, response);
     }
 }
